@@ -2,164 +2,106 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>StudentHub | Profile</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub | Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-
-    <!-- Sidebar -->
-
-    <div class="sidebar">
-
-        <h2>StudentHub</h2>
-
-        <ul>
-
-            <li><a href="dashboard.html">🏠 Dashboard</a></li>
-            <li><a href="profile.html" class="active">👤 Profile</a></li>
-            <li><a href="attendance.html">📅 Attendance</a></li>
-            <li><a href="course.html">📚 Courses</a></li>
-            <li><a href="schedule.html">🕒 Schedule</a></li>
-            <li><a href="grades.html">📄 Grades</a></li>
-            <li><a href="fees.html">💳 Fees</a></li>
-            <li><a href="announcements.html">📢 Announcements</a></li>
-            <li><a href="studentcorner.html">🎓 Student Corner</a></li>
-            <li><a href="settings.html">⚙ Settings</a></li>
-            <li><a href="login.html">🚪 Logout</a></li>
-
-        </ul>
-
-    </div>
-
-    <!-- Main -->
-
-    <div class="main">
-
-        <div class="topbar">
-
-            <h1>My Profile</h1>
-
-            <h3>Student Information</h3>
-
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>My Profile</h1>
+                <p>View and manage your academic profile records</p>
+            </div>
         </div>
 
-        <!-- Profile Card -->
+        <section class="grid-3" style="grid-template-columns: 1fr 2fr;">
+            <!-- Avatar card -->
+            <div class="card"
+                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px;">
+                <div
+                    style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-color); margin-bottom: 20px; box-shadow: 0 4px 15px var(--accent-glow);">
+                    <img src="" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h2 style="margin-bottom: 4px;">Dhruvrajsinh Dodiya</h2>
+                <p style="color: var(--accent-color); font-weight: 500; font-size: 14px; margin-bottom: 16px;">B.Tech
+                    Computer Science & Eng.</p>
+                <button class="btn edit-profile-btn" style="width: 100%;">Edit Profile Details</button>
+            </div>
 
-        <div class="section" style="text-align:center;">
+            <!-- Academic & Personal Info Card -->
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <div class="card">
+                    <h2
+                        style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px;">
+                        Personal Information</h2>
+                    <div class="table-responsive" style="border: none; margin-top: 0;">
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 35%; font-weight: 600; color: var(--text-primary);">Student ID
+                                    </td>
+                                    <td>25CS009</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Email Address</td>
+                                    <td>dhruvrajsinhdodiya4208@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Phone Number</td>
+                                    <td>+91 7096231111</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Gender / Age</td>
+                                    <td>Male / 18 Years</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Date of Birth</td>
+                                    <td>04 February 2008</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-            <img src="https://via.placeholder.com/140"
-            alt="Profile"
-            class="profile-img">
+                <div class="card">
+                    <h2
+                        style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px;">
+                        Academic Credentials</h2>
+                    <div class="table-responsive" style="border: none; margin-top: 0;">
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 35%; font-weight: 600; color: var(--text-primary);">Department
+                                    </td>
+                                    <td>Computer Science & Engineering</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Current Semester / Div
+                                    </td>
+                                    <td>Semester 1 / Division A</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Active CGPA</td>
+                                    <td style="font-weight: 700; color: var(--accent-color);">8.75 / 10.0</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: 600; color: var(--text-primary);">Academic Attendance</td>
+                                    <td>92% Overall</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-            <h2>Dhruvrajsinh Dodiya</h2>
-
-            <p>B.Tech Computer Science & Engineering</p>
-
-        </div>
-
-        <!-- Personal Details -->
-
-        <div class="section">
-
-            <h2>Personal Details</h2>
-
-            <table>
-
-                <tr>
-                    <th>Student ID</th>
-                    <td>25CS009</td>
-                </tr>
-
-                <tr>
-                    <th>Email</th>
-                    <td>dhruv@example.com</td>
-                </tr>
-
-                <tr>
-                    <th>Phone</th>
-                    <td>+91 9876543210</td>
-                </tr>
-
-                <tr>
-                    <th>Gender</th>
-                    <td>Male</td>
-                </tr>
-
-                <tr>
-                    <th>Date of Birth</th>
-                    <td>01 January 2007</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-        <!-- Academic Details -->
-
-        <div class="section">
-
-            <h2>Academic Details</h2>
-
-            <table>
-
-                <tr>
-                    <th>Department</th>
-                    <td>Computer Science & Engineering</td>
-                </tr>
-
-                <tr>
-                    <th>Semester</th>
-                    <td>1</td>
-                </tr>
-
-                <tr>
-                    <th>Division</th>
-                    <td>A</td>
-                </tr>
-
-                <tr>
-                    <th>CGPA</th>
-                    <td>8.75</td>
-                </tr>
-
-                <tr>
-                    <th>Attendance</th>
-                    <td>92%</td>
-                </tr>
-
-            </table>
-
-        </div>
-
-        <!-- Button -->
-
-        <div class="section" style="text-align:center;">
-
-            <button class="btn">
-
-                Edit Profile
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

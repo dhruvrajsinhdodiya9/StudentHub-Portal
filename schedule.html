@@ -2,566 +2,145 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Student Hub | Schedule</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub | Schedule</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<div class="logo">
-<i class="fa-solid fa-graduation-cap"></i>
-StudentHub
-</div>
-
-
-<ul>
-
-<li><a href="dashboard.html">
-<i class="fa-solid fa-chart-line"></i>
-Dashboard
-</a></li>
-
-<li><a href="home.html">
-<i class="fa-solid fa-house"></i>
-Home
-</a></li>
-
-<li><a href="course.html">
-<i class="fa-solid fa-book"></i>
-Courses
-</a></li>
-
-<li><a href="attendance.html">
-<i class="fa-solid fa-calendar-check"></i>
-Attendance
-</a></li>
-
-<li><a href="schedule.html">
-<i class="fa-solid fa-calendar"></i>
-Schedule
-</a></li>
-
-<li><a href="grades.html">
-<i class="fa-solid fa-star"></i>
-Grades
-</a></li>
-
-<li><a href="fees.html">
-<i class="fa-solid fa-wallet"></i>
-Fees
-</a></li>
-
-<li><a href="announcements.html">
-<i class="fa-solid fa-bullhorn"></i>
-Announcements
-</a></li>
-
-<li><a href="studentcorner.html">
-<i class="fa-solid fa-users"></i>
-Student Corner
-</a></li>
-
-<li><a href="profile.html">
-<i class="fa-solid fa-user"></i>
-Profile
-</a></li>
-
-<li><a href="settings.html">
-<i class="fa-solid fa-gear"></i>
-Settings
-</a></li>
-
-<li>
-<a href="#" id="logout">
-<i class="fa-solid fa-right-from-bracket"></i>
-Logout
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-
-
-
-<!-- Main -->
-
-<div class="main">
-
-
-<div class="navbar">
-
-<h2>
-Class Schedule
-</h2>
-
-
-<div class="user">
-
-<img src="https://i.pravatar.cc/100">
-
-<div>
-
-<h4>
-Alex Johnson
-</h4>
-
-<p style="color:#aaa;font-size:13px;">
-Semester 6 | Computer Science
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Today's Classes -->
-
-<div class="card"
-style="margin-bottom:25px;">
-
-
-<h2>
-Today's Classes 📚
-</h2>
-
-
-<br>
-
-
-<div class="grid">
-
-
-<div class="stat-card">
-
-<h3>
-10:00 AM
-</h3>
-
-<p>
-Web Development
-</p>
-
-<p style="color:#aaa;">
-Room: Lab 204
-</p>
-
-</div>
-
-
-
-<div class="stat-card">
-
-<h3>
-12:00 PM
-</h3>
-
-<p>
-Database Systems
-</p>
-
-<p style="color:#aaa;">
-Room: CS Block 301
-</p>
-
-</div>
-
-
-
-
-<div class="stat-card">
-
-<h3>
-3:00 PM
-</h3>
-
-<p>
-Artificial Intelligence
-</p>
-
-<p style="color:#aaa;">
-Room: AI Lab
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Weekly Timetable -->
-
-
-<div class="card">
-
-
-<h2>
-Weekly Timetable
-</h2>
-
-
-<br>
-
-
-
-<table>
-
-
-<tr>
-
-<th>
-Day
-</th>
-
-<th>
-9:00 - 10:00
-</th>
-
-<th>
-10:00 - 11:00
-</th>
-
-<th>
-11:00 - 12:00
-</th>
-
-<th>
-2:00 - 3:00
-</th>
-
-<th>
-3:00 - 4:00
-</th>
-
-</tr>
-
-
-
-
-
-<tr>
-
-<td>
-Monday
-</td>
-
-<td>
-Maths
-</td>
-
-<td>
-Web Dev
-</td>
-
-<td>
-Database
-</td>
-
-<td>
-AI
-</td>
-
-<td>
-Lab
-</td>
-
-</tr>
-
-
-
-
-
-<tr>
-
-<td>
-Tuesday
-</td>
-
-<td>
-Networks
-</td>
-
-<td>
-Database
-</td>
-
-<td>
-Web Dev
-</td>
-
-<td>
-Project
-</td>
-
-<td>
-Library
-</td>
-
-</tr>
-
-
-
-
-
-
-<tr>
-
-<td>
-Wednesday
-</td>
-
-<td>
-AI
-</td>
-
-<td>
-Maths
-</td>
-
-<td>
-Networks
-</td>
-
-<td>
-Web Dev
-</td>
-
-<td>
-Lab
-</td>
-
-</tr>
-
-
-
-
-
-
-<tr>
-
-<td>
-Thursday
-</td>
-
-<td>
-Database
-</td>
-
-<td>
-Project
-</td>
-
-<td>
-AI
-</td>
-
-<td>
-Networks
-</td>
-
-<td>
-Seminar
-</td>
-
-</tr>
-
-
-
-
-
-
-<tr>
-
-<td>
-Friday
-</td>
-
-<td>
-Web Dev
-</td>
-
-<td>
-Database
-</td>
-
-<td>
-Maths
-</td>
-
-<td>
-AI
-</td>
-
-<td>
-Sports
-</td>
-
-</tr>
-
-
-
-</table>
-
-
-</div>
-
-
-
-
-
-
-
-<br>
-
-
-
-
-
-
-
-<!-- Faculty Details -->
-
-
-<div class="card">
-
-
-<h2>
-Faculty Information
-</h2>
-
-
-<br>
-
-
-
-<table>
-
-
-<tr>
-
-<th>
-Subject
-</th>
-
-<th>
-Faculty
-</th>
-
-<th>
-Email
-</th>
-
-</tr>
-
-
-
-<tr>
-
-<td>
-Web Development
-</td>
-
-<td>
-Dr. Sarah Smith
-</td>
-
-<td>
-sarah@university.edu
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td>
-Database Systems
-</td>
-
-<td>
-Prof. Michael Lee
-</td>
-
-<td>
-michael@university.edu
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td>
-Artificial Intelligence
-</td>
-
-<td>
-Dr. Emily Watson
-</td>
-
-<td>
-emily@university.edu
-</td>
-
-</tr>
-
-
-
-</table>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-<script src="js/script.js"></script>
-
-
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>Class Schedule</h1>
+                <p>Weekly classroom timetables and faculty directories</p>
+            </div>
+        </div>
+
+        <!-- Today's Classes Mini Cards -->
+        <div class="card" style="margin-bottom: 24px;">
+            <h2 style="margin-bottom: 16px;">Today's Lectures</h2>
+            <section class="grid-3" style="margin-bottom: 0;">
+                <div class="card"
+                    style="background: var(--bg-primary); border-color: var(--border-color); padding: 16px;">
+                    <h3 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 6px;">10:00 AM</h3>
+                    <p style="font-weight: 600; color: var(--text-primary); font-size: 14px;">Web Development</p>
+                    <p style="font-size: 12px; color: var(--text-secondary);">Room: Lab 204</p>
+                </div>
+                <div class="card"
+                    style="background: var(--bg-primary); border-color: var(--border-color); padding: 16px;">
+                    <h3 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 6px;">12:00 PM</h3>
+                    <p style="font-weight: 600; color: var(--text-primary); font-size: 14px;">Database Systems</p>
+                    <p style="font-size: 12px; color: var(--text-secondary);">Room: CS Block 301</p>
+                </div>
+                <div class="card"
+                    style="background: var(--bg-primary); border-color: var(--border-color); padding: 16px;">
+                    <h3 style="color: var(--accent-color); font-size: 1.1rem; margin-bottom: 6px;">03:00 PM</h3>
+                    <p style="font-weight: 600; color: var(--text-primary); font-size: 14px;">Artificial Intelligence
+                    </p>
+                    <p style="font-size: 12px; color: var(--text-secondary);">Room: AI Lab</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Weekly Timetable Table -->
+        <div class="card" style="margin-bottom: 24px;">
+            <h2 style="margin-bottom: 12px;">Weekly Timetable</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>09:00 - 10:00</th>
+                            <th>10:00 - 11:00</th>
+                            <th>11:00 - 12:00</th>
+                            <th>02:00 - 03:00</th>
+                            <th>03:00 - 04:00</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">Monday</td>
+                            <td>Maths</td>
+                            <td>Web Dev</td>
+                            <td>Database</td>
+                            <td>AI</td>
+                            <td>Lab Session</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">Tuesday</td>
+                            <td>Networks</td>
+                            <td>Database</td>
+                            <td>Web Dev</td>
+                            <td>Project Work</td>
+                            <td>Library Reference</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">Wednesday</td>
+                            <td>AI</td>
+                            <td>Maths</td>
+                            <td>Networks</td>
+                            <td>Web Dev</td>
+                            <td>Lab Session</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">Thursday</td>
+                            <td>Database</td>
+                            <td>Project Work</td>
+                            <td>AI</td>
+                            <td>Networks</td>
+                            <td>Special Seminar</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">Friday</td>
+                            <td>Web Dev</td>
+                            <td>Database</td>
+                            <td>Maths</td>
+                            <td>AI</td>
+                            <td>Sports Activity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Faculty Contact list -->
+        <div class="card">
+            <h2 style="margin-bottom: 12px;">Faculty Directories</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Instructor</th>
+                            <th>University Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--text-primary);">Web Development</td>
+                            <td>Dr. Sarah Smith</td>
+                            <td><a href="mailto:sarah@university.edu">sarah@university.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--text-primary);">Database Systems</td>
+                            <td>Prof. Michael Lee</td>
+                            <td><a href="mailto:michael@university.edu">michael@university.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600; color: var(--text-primary);">Artificial Intelligence</td>
+                            <td>Dr. Emily Watson</td>
+                            <td><a href="mailto:emily@university.edu">emily@university.edu</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

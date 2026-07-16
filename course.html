@@ -2,604 +2,131 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Student Hub | Courses</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub | Courses</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<div class="logo">
-<i class="fa-solid fa-graduation-cap"></i>
-StudentHub
-</div>
-
-
-<ul>
-
-<li><a href="dashboard.html">
-<i class="fa-solid fa-chart-line"></i>
-Dashboard
-</a></li>
-
-
-<li><a href="home.html">
-<i class="fa-solid fa-house"></i>
-Home
-</a></li>
-
-
-<li><a href="course.html">
-<i class="fa-solid fa-book"></i>
-Courses
-</a></li>
-
-
-<li><a href="attendance.html">
-<i class="fa-solid fa-calendar-check"></i>
-Attendance
-</a></li>
-
-
-<li><a href="schedule.html">
-<i class="fa-solid fa-calendar"></i>
-Schedule
-</a></li>
-
-
-<li><a href="grades.html">
-<i class="fa-solid fa-star"></i>
-Grades
-</a></li>
-
-
-<li><a href="fees.html">
-<i class="fa-solid fa-wallet"></i>
-Fees
-</a></li>
-
-
-<li><a href="announcements.html">
-<i class="fa-solid fa-bullhorn"></i>
-Announcements
-</a></li>
-
-
-<li><a href="studentcorner.html">
-<i class="fa-solid fa-users"></i>
-Student Corner
-</a></li>
-
-
-<li><a href="profile.html">
-<i class="fa-solid fa-user"></i>
-Profile
-</a></li>
-
-
-<li><a href="settings.html">
-<i class="fa-solid fa-gear"></i>
-Settings
-</a></li>
-
-
-<li>
-<a href="#" id="logout">
-<i class="fa-solid fa-right-from-bracket"></i>
-Logout
-</a>
-</li>
-
-
-</ul>
-
-</div>
-
-
-
-
-
-<!-- Main Content -->
-
-<div class="main">
-
-
-<div class="navbar">
-
-<h2>
-My Courses
-</h2>
-
-
-<div class="user">
-
-<img src="https://i.pravatar.cc/100">
-
-
-<div>
-
-<h4>
-Alex Johnson
-</h4>
-
-<p style="color:#aaa;font-size:13px;">
-Computer Science
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Search -->
-
-<div class="card"
-style="margin-bottom:25px;">
-
-
-<input 
-type="text"
-placeholder="Search courses..."
-style="
-width:100%;
-padding:15px;
-background:#0D1117;
-border:1px solid #30363D;
-border-radius:12px;
-color:white;
-outline:none;
-font-size:15px;
-">
-
-
-</div>
-
-
-
-
-
-
-
-<h2 style="margin-bottom:20px;">
-Current Semester Courses
-</h2>
-
-
-
-
-
-
-<div class="grid">
-
-
-
-
-
-<!-- Course 1 -->
-
-<div class="card">
-
-
-<i class="fa-solid fa-code"
-style="
-font-size:40px;
-color:#00C2FF;">
-</i>
-
-
-<h2 style="margin-top:15px;">
-Web Development
-</h2>
-
-
-<p style="color:#aaa;">
-Faculty:
-Dr. Sarah Smith
-</p>
-
-
-<br>
-
-
-<p>
-Course Progress
-</p>
-
-
-<div class="progress">
-
-<span style="width:85%;"></span>
-
-</div>
-
-
-<p style="
-margin-top:8px;
-color:#00C2FF;">
-85% Completed
-</p>
-
-
-
-<button class="btn"
-style="margin-top:20px;">
-
-<i class="fa-solid fa-play"></i>
-
-Continue Learning
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Course 2 -->
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-database"
-style="
-font-size:40px;
-color:#00C2FF;">
-</i>
-
-
-<h2 style="margin-top:15px;">
-Database Systems
-</h2>
-
-
-<p style="color:#aaa;">
-Faculty:
-Prof. Michael Lee
-</p>
-
-
-<br>
-
-
-<p>
-Course Progress
-</p>
-
-
-<div class="progress">
-
-<span style="width:70%;"></span>
-
-</div>
-
-
-<p style="
-margin-top:8px;
-color:#00C2FF;">
-70% Completed
-</p>
-
-
-<button class="btn"
-style="margin-top:20px;">
-
-<i class="fa-solid fa-play"></i>
-
-Continue Learning
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<!-- Course 3 -->
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-brain"
-style="
-font-size:40px;
-color:#00C2FF;">
-</i>
-
-
-<h2 style="margin-top:15px;">
-Artificial Intelligence
-</h2>
-
-
-<p style="color:#aaa;">
-Faculty:
-Dr. Emily Watson
-</p>
-
-
-<br>
-
-
-<p>
-Course Progress
-</p>
-
-
-<div class="progress">
-
-<span style="width:60%;"></span>
-
-</div>
-
-
-<p style="
-margin-top:8px;
-color:#00C2FF;">
-60% Completed
-</p>
-
-
-<button class="btn"
-style="margin-top:20px;">
-
-<i class="fa-solid fa-play"></i>
-
-Continue Learning
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- Course 4 -->
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-network-wired"
-style="
-font-size:40px;
-color:#00C2FF;">
-</i>
-
-
-<h2 style="margin-top:15px;">
-Computer Networks
-</h2>
-
-
-<p style="color:#aaa;">
-Faculty:
-Prof. David Brown
-</p>
-
-
-<br>
-
-
-<p>
-Course Progress
-</p>
-
-
-<div class="progress">
-
-<span style="width:75%;"></span>
-
-</div>
-
-
-<p style="
-margin-top:8px;
-color:#00C2FF;">
-75% Completed
-</p>
-
-
-<button class="btn"
-style="margin-top:20px;">
-
-<i class="fa-solid fa-play"></i>
-
-Continue Learning
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<br>
-
-
-
-
-
-
-<!-- Course Table -->
-
-
-<div class="card">
-
-
-<h2>
-Course Details
-</h2>
-
-
-<br>
-
-
-<table>
-
-
-<tr>
-
-<th>
-Course Code
-</th>
-
-<th>
-Subject
-</th>
-
-<th>
-Credits
-</th>
-
-<th>
-Status
-</th>
-
-</tr>
-
-
-
-<tr>
-
-<td>
-CS401
-</td>
-
-<td>
-Web Development
-</td>
-
-<td>
-4
-</td>
-
-<td>
-<span class="badge success">
-Active
-</span>
-</td>
-
-</tr>
-
-
-
-
-<tr>
-
-<td>
-CS402
-</td>
-
-<td>
-Database Systems
-</td>
-
-<td>
-4
-</td>
-
-<td>
-<span class="badge success">
-Active
-</span>
-</td>
-
-</tr>
-
-
-
-
-<tr>
-
-<td>
-CS403
-</td>
-
-<td>
-Artificial Intelligence
-</td>
-
-<td>
-3
-</td>
-
-<td>
-<span class="badge warning">
-In Progress
-</span>
-</td>
-
-</tr>
-
-
-</table>
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-<script src="js/script.js"></script>
-
-
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>My Courses</h1>
+                <p>Active subjects and academic progress tracking</p>
+            </div>
+        </div>
+
+        <!-- Search Box Card -->
+        <div class="card" style="margin-bottom: 24px; padding: 16px;">
+            <input type="text" placeholder="Search courses..." style="padding: 12px 16px;">
+        </div>
+
+        <!-- Current Semester Courses Grid -->
+        <h2 style="margin-bottom: 16px; font-size: 1.5rem;">Current Semester Courses</h2>
+        <section class="grid-4">
+            <!-- Course 1 -->
+            <div class="card" style="display: flex; flex-direction: column;">
+                <h2 style="color: var(--accent-color);">Web Development</h2>
+                <p style="margin-bottom: 12px;">Faculty: Dr. Sarah Smith</p>
+                <div style="margin-top: auto;">
+                    <p style="font-size: 12px; margin-bottom: 4px;">Syllabus Completion</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                    <p style="font-size: 12px; font-weight: 600; color: var(--accent-color); margin-bottom: 16px;">85%
+                        Completed</p>
+                    <button class="btn continue-learning-btn" style="width: 100%;">Continue Learning </button>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="card" style="display: flex; flex-direction: column;">
+                <h2 style="color: var(--accent-color);">Database Systems</h2>
+                <p style="margin-bottom: 12px;">Faculty: Prof. Michael Lee</p>
+                <div style="margin-top: auto;">
+                    <p style="font-size: 12px; margin-bottom: 4px;">Syllabus Completion</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                    </div>
+                    <p style="font-size: 12px; font-weight: 600; color: var(--accent-color); margin-bottom: 16px;">70%
+                        Completed</p>
+                    <button class="btn continue-learning-btn" style="width: 100%;">Continue Learning </button>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="card" style="display: flex; flex-direction: column;">
+                <h2 style="color: var(--accent-color);">Artificial Intelligence</h2>
+                <p style="margin-bottom: 12px;">Faculty: Dr. Emily Watson</p>
+                <div style="margin-top: auto;">
+                    <p style="font-size: 12px; margin-bottom: 4px;">Syllabus Completion</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 60%;"></div>
+                    </div>
+                    <p style="font-size: 12px; font-weight: 600; color: var(--accent-color); margin-bottom: 16px;">60%
+                        Completed</p>
+                    <button class="btn continue-learning-btn" style="width: 100%;">Continue Learning </button>
+                </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="card" style="display: flex; flex-direction: column;">
+                <h2 style="color: var(--accent-color);">Computer Networks</h2>
+                <p style="margin-bottom: 12px;">Faculty: Prof. David Brown</p>
+                <div style="margin-top: auto;">
+                    <p style="font-size: 12px; margin-bottom: 4px;">Syllabus Completion</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <p style="font-size: 12px; font-weight: 600; color: var(--accent-color); margin-bottom: 16px;">75%
+                        Completed</p>
+                    <button class="btn continue-learning-btn" style="width: 100%;">Continue Learning </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Details Table -->
+        <section class="card" style="margin-top: 32px;">
+            <h2>Course Matrix & Credits</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Subject</th>
+                            <th>Credits</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">CS401</td>
+                            <td>Web Development</td>
+                            <td>4</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">CS402</td>
+                            <td>Database Systems</td>
+                            <td>4</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; color: var(--text-primary);">CS403</td>
+                            <td>Artificial Intelligence</td>
+                            <td>3</td>
+                            <td><span class="badge badge-warning">In Progress</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

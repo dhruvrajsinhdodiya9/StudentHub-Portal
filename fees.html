@@ -2,158 +2,161 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>StudentHub | Fees</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARUSAT | Student Fees Payments</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-
-    <!-- Sidebar -->
-
-    <div class="sidebar">
-
-        <h2>StudentHub</h2>
-
-        <ul>
-
-            <li><a href="dashboard.html">🏠 Dashboard</a></li>
-            <li><a href="profile.html">👤 Profile</a></li>
-            <li><a href="attendance.html">📅 Attendance</a></li>
-            <li><a href="course.html">📚 Courses</a></li>
-            <li><a href="schedule.html">🕒 Schedule</a></li>
-            <li><a href="grades.html">📄 Grades</a></li>
-            <li><a href="fees.html" class="active">💳 Fees</a></li>
-            <li><a href="announcements.html">📢 Announcements</a></li>
-            <li><a href="studentcorner.html">🎓 Student Corner</a></li>
-            <li><a href="settings.html">⚙ Settings</a></li>
-            <li><a href="login.html">🚪 Logout</a></li>
-
-        </ul>
-
-    </div>
-
-    <!-- Main -->
-
-    <div class="main">
-
-        <div class="topbar">
-
-            <h1>Fee Details</h1>
-
-            <h3>Academic Year 2026-27</h3>
-
-        </div>
-
-        <!-- Cards -->
-
-        <div class="cards">
-
-            <div class="card">
-
-                <h2>₹75,000</h2>
-
-                <p>Total Fees</p>
-
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>Student Fees Payments</h1>
+                <p>Clear semester and hostel dues via CHARUSAT payment gateway services</p>
             </div>
-
-            <div class="card">
-
-                <h2>₹75,000</h2>
-
-                <p>Paid</p>
-
+            <div style="text-align: right; font-size: 13px; color: var(--text-secondary);">
+                <b>Helpdesk:</b> Mr. Harsh Patel (02697-265025) | <a href="mailto:harshpatel.adm@charusat.ac.in"
+                    style="color: var(--accent-color);">harshpatel.adm@charusat.ac.in</a>
             </div>
+        </div>
 
-            <div class="card">
-
-                <h2>₹0</h2>
-
-                <p>Pending</p>
-
+        <!-- Search Form -->
+        <div class="card" style="margin-bottom: 24px; padding: 20px;">
+            <h2 style="font-size: 1.1rem; margin-bottom: 12px;">Student Dues Query</h2>
+            <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                <input type="text" id="txtFeesEnrNo" placeholder="Enter CHARUSAT Student ID (e.g. 25CS009)"
+                    value="25CS009" style="flex: 1; min-width: 250px;">
+                <input type="button" id="btnFeesSearch" class="btn" value="Search" style="padding: 12px 32px;">
             </div>
-
         </div>
 
-        <!-- Payment Status -->
-
-        <div class="section">
-
-            <h2>Payment Status</h2>
-
-            <table>
-
-                <tr>
-                    <th>Semester</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                </tr>
-
-                <tr>
-                    <td>Semester 1</td>
-                    <td>₹75,000</td>
-                    <td>Paid ✅</td>
-                    <td>10 July 2026</td>
-                </tr>
-
-            </table>
-
+        <!-- Placeholder Panel -->
+        <div id="feesPlaceholderPanel" class="card"
+            style="text-align: center; padding: 48px; color: var(--text-secondary);">
+            <p>🔍 Enter your Student ID to retrieve outstanding bills and transaction logs.</p>
         </div>
 
-        <!-- Transaction History -->
+        <!-- Interactive Dues & Ledger Details (Shown dynamically) -->
+        <div id="feesDetailsPanel" style="display: none;">
+            <!-- KPI Cards -->
+            <section class="grid-3">
+                <div class="card">
+                    <h2>Total Annual Tuition</h2>
+                    <div class="stat-value">₹1,50,000</div>
+                    <p>Academic Year 2026-27</p>
+                </div>
+                <div class="card">
+                    <h2>Total Cleared Dues</h2>
+                    <div id="clearedDuesVal" class="stat-value" style="color: var(--success);">₹75,000</div>
+                    <p>Settled transactions</p>
+                </div>
+                <div class="card">
+                    <h2>Outstanding Balance</h2>
+                    <div id="pendingDuesVal" class="stat-value" style="color: var(--warning);">₹75,000</div>
+                    <p>Pending dues requiring action</p>
+                </div>
+            </section>
 
-        <div class="section">
+            <div class="grid-3" style="grid-template-columns: 2fr 1fr; margin-top: 8px;">
+                <!-- Dues list & payment option -->
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div class="card">
+                        <h2>Outstanding Dues Statements</h2>
+                        <div class="table-responsive" style="margin-top: 12px;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Billing Item</th>
+                                        <th>Fee Amount</th>
+                                        <th>Dues Status</th>
+                                        <th>Settle Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="clearedFeesRow">
+                                        <td style="font-weight: 600; color: var(--text-primary);">Semester 1 Tuition
+                                            Fees</td>
+                                        <td>₹75,000</td>
+                                        <td><span class="badge badge-success">Cleared</span></td>
+                                        <td>10 July 2026</td>
+                                    </tr>
+                                    <tr id="unpaidFeesRow">
+                                        <td style="font-weight: 600; color: var(--text-primary);">Semester 2 Tuition
+                                            Fees</td>
+                                        <td>₹75,000</td>
+                                        <td><span class="badge badge-danger">Unpaid</span></td>
+                                        <td style="color: var(--warning); font-weight: 500;">Due: 15 Jan 2027</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-            <h2>Transaction History</h2>
+                    <!-- Transaction Ledger Card -->
+                    <div class="card">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 12px;">
+                            <h2>Recent Transactions Log</h2>
+                            <button class="btn btn-secondary download-receipt-btn"
+                                style="padding: 6px 14px; font-size: 13px;">Receipt Copy</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Receipt No.</th>
+                                        <th>Gateway Mode</th>
+                                        <th>Amount Paid</th>
+                                        <th>Bank Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ledgerTableBody">
+                                    <tr>
+                                        <td style="font-weight: 700; color: var(--text-primary);">REC10235</td>
+                                        <td>UPI Transfer (GPay)</td>
+                                        <td>₹75,000</td>
+                                        <td><span class="badge badge-success">Successful</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-            <table>
+                <!-- Payment Gateway Selector Card -->
+                <div class="card" style="height: fit-content;">
+                    <h2>Online Payment Gateway</h2>
+                    <p style="font-size: 13px; margin-bottom: 16px; color: var(--text-secondary);">Choose network
+                        protocol to process payment securely:</p>
+                    <form id="feesPaymentForm" style="display: flex; flex-direction: column; gap: 12px;">
+                        <label
+                            style="display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-primary); border-radius: 8px; cursor: pointer; border: 1px solid var(--border-color);">
+                            <input type="radio" name="paymentMode" value="UPI" checked style="width: auto;"> <span>UPI
+                                (Paytm / GPay)</span>
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-primary); border-radius: 8px; cursor: pointer; border: 1px solid var(--border-color);">
+                            <input type="radio" name="paymentMode" value="Credit/Debit Card" style="width: auto;">
+                            <span>Visa / MasterCard</span>
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-primary); border-radius: 8px; cursor: pointer; border: 1px solid var(--border-color);">
+                            <input type="radio" name="paymentMode" value="Net Banking" style="width: auto;"> <span>SBI /
+                                ICICI NetBanking</span>
+                        </label>
 
-                <tr>
-                    <th>Receipt No.</th>
-                    <th>Payment Mode</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                </tr>
-
-                <tr>
-                    <td>REC10235</td>
-                    <td>UPI</td>
-                    <td>₹75,000</td>
-                    <td>Successful</td>
-                </tr>
-
-            </table>
-
+                        <button type="button" id="btnPayDues" class="btn"
+                            style="width: 100%; margin-top: 10px; padding: 14px;">Pay Outstanding Dues</button>
+                    </form>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <!-- Button -->
-
-        <div class="section">
-
-            <button class="btn">
-
-                Download Receipt
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

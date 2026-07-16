@@ -1,211 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>StudentHub | Dashboard</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARUSAT | Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-
-    <!-- Sidebar -->
-
-    <div class="sidebar">
-
-        <h2>StudentHub</h2>
-
-        <ul>
-
-            <li><a href="dashboard.html" class="active">🏠 Dashboard</a></li>
-
-            <li><a href="profile.html">👤 Profile</a></li>
-
-            <li><a href="attendance.html">📅 Attendance</a></li>
-
-            <li><a href="course.html">📚 Courses</a></li>
-
-            <li><a href="schedule.html">🕒 Schedule</a></li>
-
-            <li><a href="grades.html">📄 Grades</a></li>
-
-            <li><a href="fees.html">💳 Fees</a></li>
-
-            <li><a href="announcements.html">📢 Announcements</a></li>
-
-            <li><a href="studentcorner.html">🎓 Student Corner</a></li>
-
-            <li><a href="settings.html">⚙ Settings</a></li>
-
-            <li><a href="login.html">🚪 Logout</a></li>
-
-        </ul>
-
-    </div>
-
-
-
-    <!-- Main Content -->
-
-    <div class="main">
-
-        <div class="topbar">
-
-            <h1>Dashboard</h1>
-
-            <h3>Welcome, Dhruvrajsinh 👋</h3>
-
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>Student Dashboard</h1>
+                <p>Welcome back, Dhruvrajsinh Dodiya (Enrollment: 25CS009 | Institute: CSPIT)</p>
+            </div>
         </div>
 
-
-
-        <!-- Cards -->
-
-        <div class="cards">
-
+        <!-- Stat Cards KPI -->
+        <section class="grid-4">
             <div class="card">
+                <h2>Attendance</h2>
+                <div class="stat-value">92%</div>
+                <p style="color: var(--success);">Above target (75%)</p>
+            </div>
+            <div class="card">
+                <h2>Cumulative CGPA</h2>
+                <div class="stat-value">8.75</div>
+                <p>Semester 1 Grade Record</p>
+            </div>
+            <div class="card">
+                <h2>Active Courses</h2>
+                <div class="stat-value">5</div>
+                <p>In progress this semester</p>
+            </div>
+            <div class="card">
+                <h2>Financials</h2>
+                <div id="pendingDuesValDashboard" class="stat-value" style="color: var(--warning);">₹75,000</div>
+                <p>Outstanding balance due</p>
+            </div>
+        </section>
 
-                <h2>92%</h2>
-
-                <p>Attendance</p>
-
+        <!-- Detailed Columns Grid -->
+        <section class="grid-3">
+            <!-- Recent Activity Card -->
+            <div class="card">
+                <h2>Recent Activity</h2>
+                <ul style="list-style: none; padding-top: 10px;">
+                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">
+                        Attendance database updated (Today)</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">DE
+                        Assignment uploaded successfully</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">Semester
+                        fees paid online via UPI</li>
+                    <li style="padding: 8px 0; font-size: 14px;">OOP Quiz results published</li>
+                </ul>
             </div>
 
+            <!-- Latest Announcements Card -->
             <div class="card">
-
-                <h2>8.7</h2>
-
-                <p>CGPA</p>
-
+                <h2>College Announcements</h2>
+                <ul style="list-style: none; padding-top: 10px;">
+                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">
+                        Mid-Semester examinations begin next Monday.</li>
+                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">AI & Deep
+                        Learning workshop registrations open.</li>
+                    <li style="padding: 8px 0; font-size: 14px;">Annual Hackathon team selection deadline: Friday.</li>
+                </ul>
             </div>
 
+            <!-- Today's Classes Card -->
             <div class="card">
-
-                <h2>6</h2>
-
-                <p>Courses</p>
-
+                <h2>Today's Classes</h2>
+                <div class="table-responsive" style="margin-top: 10px; border: none;">
+                    <table style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Room</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9:00 AM</td>
+                                <td style="font-weight: 500; color: var(--text-primary);">OOP in C++</td>
+                                <td>Lab-3</td>
+                            </tr>
+                            <tr>
+                                <td>11:00 AM</td>
+                                <td style="font-weight: 500; color: var(--text-primary);">Digital Electronics</td>
+                                <td>B-204</td>
+                            </tr>
+                            <tr>
+                                <td>2:00 PM</td>
+                                <td style="font-weight: 500; color: var(--text-primary);">Engineering Maths</td>
+                                <td>A-102</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="card">
-
-                <h2>Paid</h2>
-
-                <p>Fees</p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Recent Activity -->
-
-        <div class="section">
-
-            <h2>Recent Activity</h2>
-
-            <ul>
-
-                <li>✔ Attendance updated</li>
-
-                <li>✔ DE Assignment uploaded</li>
-
-                <li>✔ Fees Successfully Paid</li>
-
-                <li>✔ OOP Quiz Result Published</li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- Announcements -->
-
-        <div class="section">
-
-            <h2>Latest Announcements</h2>
-
-            <ul>
-
-                <li>📢 Mid Semester Exam starts next Monday.</li>
-
-                <li>📢 AI Workshop Registration Open.</li>
-
-                <li>📢 Hackathon Team Registration Ends Friday.</li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- Today's Classes -->
-
-        <div class="section">
-
-            <h2>Today's Classes</h2>
-
-            <table>
-
-                <tr>
-
-                    <th>Time</th>
-
-                    <th>Subject</th>
-
-                    <th>Room</th>
-
-                </tr>
-
-                <tr>
-
-                    <td>9:00 AM</td>
-
-                    <td>OOP in C++</td>
-
-                    <td>Lab-3</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>11:00 AM</td>
-
-                    <td>Digital Electronics</td>
-
-                    <td>B-204</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>2:00 PM</td>
-
-                    <td>Engineering Maths</td>
-
-                    <td>A-102</td>
-
-                </tr>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
+    <script>
+        // Keep dashboard dues indicator in sync with the localStorage or fees database if paid in fees.html
+        document.addEventListener('DOMContentLoaded', () => {
+            const cleared = document.getElementById('clearedFeesRow') === null; // In real life, fees.html modifies, we just do a mock sync
+            const pendingDashboard = document.getElementById('pendingDuesValDashboard');
+            if (pendingDashboard && localStorage.getItem('feesPaid') === 'true') {
+                pendingDashboard.innerText = '₹0';
+                pendingDashboard.style.color = 'var(--success)';
+            }
+        });
+    </script>
 </body>
+
 </html>

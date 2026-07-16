@@ -1,57 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Login</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="login-container">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1 class="auth-logo">StudentHub</h1>
+            <p class="auth-subtitle">Welcome Back! Sign in to continue</p>
 
-    <div class="login-box">
+            <form>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@university.edu" required>
+                </div>
 
-        <h1>StudentHub</h1>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
 
-        <p>Welcome Back</p>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">
+                    Sign In
+                </button>
+            </form>
 
-        <form>
+            <div style="text-align: right; margin-top: 14px;">
+                <a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 13px;">Forgot
+                    Password?</a>
+            </div>
 
-            <input
-                type="email"
-                placeholder="Email"
-                required
-            >
-
-            <input
-                type="password"
-                placeholder="Password"
-                required
-            >
-
-            <button type="submit">
-                Login
-            </button>
-
-        </form>
-
-        <a href="#">Forgot Password?</a>
-
-        <p class="bottom-text">
-            Don't have an account?
-            <a href="signup.html">Sign Up</a>
-        </p>
-
+            <p class="auth-footer-text">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </p>
+        </div>
     </div>
 
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
