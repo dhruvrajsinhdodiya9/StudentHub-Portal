@@ -12,26 +12,38 @@
 
     <div class="auth-container">
         <div class="auth-card">
+            <img src="charusat-logo.jpg" alt="CHARUSAT Logo" class="auth-logo-img">
             <h1 class="auth-logo">Create Account</h1>
             <p class="auth-subtitle">Join StudentHub to manage your studies</p>
 
-            <form>
+            <form id="signupForm">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Dhruvrajsinh Dodiya" required>
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Dhruvrajsinh Dodiya" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="name@university.edu" required>
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" placeholder="dhruvrajsinh" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
+                    <label for="signupEmail">Gmail Address</label>
+                    <input type="email" id="signupEmail" placeholder="dhruvrajsinh@gmail.com" required>
                 </div>
 
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                    <div class="password-strength-container">
+                        <div class="strength-bar-bg">
+                            <div id="strengthBar" class="strength-bar-fill"></div>
+                        </div>
+                        <div id="strengthText" class="strength-text">Password requirements: Min 8 chars, uppercase, lowercase & numbers</div>
+                    </div>
+                </div>
+
+                <button type="submit" id="btnSignupSubmit" class="btn" style="width: 100%; margin-top: 14px;">
                     Create Account
                 </button>
             </form>

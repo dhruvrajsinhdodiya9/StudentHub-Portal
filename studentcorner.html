@@ -26,22 +26,22 @@
         <!-- Resource Cards -->
         <section class="grid-3">
             <div class="card" style="display: flex; flex-direction: column;">
-                <h2>Lecture Notes & Syllabus</h2>
+                <h2>📁 Lecture Notes & Syllabus</h2>
                 <p style="margin-bottom: 20px;">Download official course syllabi, lecture presentations, and reference
                     guides approved by the Board of Studies.</p>
-                <button class="btn resource-btn" style="margin-top: auto; width: 100%;">Access Files </button>
+                <button id="btnAccessFiles" class="btn resource-btn" style="margin-top: auto; width: 100%;">Access Files</button>
             </div>
             <div class="card" style="display: flex; flex-direction: column;">
-                <h2>Lab Assignment Submissions</h2>
+                <h2>📝 Lab Assignment Submissions</h2>
                 <p style="margin-bottom: 20px;">Submit reports, assignments, and weekly projects directly to the campus
                     Learning Management System.</p>
-                <button class="btn resource-btn" style="margin-top: auto; width: 100%;">Open Assignments </button>
+                <button id="btnOpenAssignments" class="btn resource-btn" style="margin-top: auto; width: 100%;">Open Assignments</button>
             </div>
             <div class="card" style="display: flex; flex-direction: column;">
-                <h2>Sandbox Sandbox coding</h2>
+                <h2>💻 Sandbox Code Execution</h2>
                 <p style="margin-bottom: 20px;">Access programming contest sandboxes, data structures exercises, and
                     algorithms exercises in C++ and Python.</p>
-                <button class="btn resource-btn" style="margin-top: auto; width: 100%;">Start Sandbox Code </button>
+                <button id="btnStartSandbox" class="btn resource-btn" style="margin-top: auto; width: 100%;">Start Sandbox Code</button>
             </div>
         </section>
 
@@ -60,33 +60,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">CHARUSAT e-Governance System
-                                </td>
-                                <td><a href="#" class="btn btn-secondary resource-btn"
-                                        style="padding: 6px 12px; font-size: 12px;">Login System</a></td>
+                                <td style="font-weight: 600; color: var(--text-primary);">CHARUSAT e-Governance System</td>
+                                <td><button class="btn btn-secondary admin-service-btn" data-service="egov" style="padding: 6px 12px; font-size: 12px;">Login System</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">Academic Verification Desk
-                                </td>
-                                <td><a href="#" class="btn btn-secondary resource-btn"
-                                        style="padding: 6px 12px; font-size: 12px;">Verify Records</a></td>
+                                <td style="font-weight: 600; color: var(--text-primary);">Academic Verification Desk</td>
+                                <td><button class="btn btn-secondary admin-service-btn" data-service="verify" style="padding: 6px 12px; font-size: 12px;">Verify Records</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">Transcript & Migration Desk
-                                </td>
-                                <td><a href="#" class="btn btn-secondary resource-btn"
-                                        style="padding: 6px 12px; font-size: 12px;">Apply Certificate</a></td>
+                                <td style="font-weight: 600; color: var(--text-primary);">Transcript & Migration Desk</td>
+                                <td><button class="btn btn-secondary admin-service-btn" data-service="transcript" style="padding: 6px 12px; font-size: 12px;">Apply Certificate</button></td>
                             </tr>
                             <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">Digilocker Academic Awards
-                                    (NAD)</td>
-                                <td><a href="#" class="btn btn-secondary resource-btn"
-                                        style="padding: 6px 12px; font-size: 12px;">Access Awards</a></td>
+                                <td style="font-weight: 600; color: var(--text-primary);">Digilocker Academic Awards (NAD)</td>
+                                <td><button class="btn btn-secondary admin-service-btn" data-service="digilocker" style="padding: 6px 12px; font-size: 12px;">Access Awards</button></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; color: var(--text-primary);">Old Semester Exam Papers</td>
-                                <td><a href="#" class="btn btn-secondary resource-btn"
-                                        style="padding: 6px 12px; font-size: 12px;">Browse Papers</a></td>
+                                <td><button class="btn btn-secondary admin-service-btn" data-service="papers" style="padding: 6px 12px; font-size: 12px;">Browse Papers</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -97,22 +88,188 @@
             <div class="card">
                 <h2>Academic Guidelines</h2>
                 <ul style="list-style: none; padding-top: 12px; display: flex; flex-direction: column; gap: 14px;">
-                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="resource-btn"
-                            style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Promotion &
-                            Detention Rules</a></li>
-                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="resource-btn"
-                            style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Student Code of
-                            Conduct</a></li>
-                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="resource-btn"
-                            style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Student Fee
-                            Refund Policy</a></li>
-                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="resource-btn"
-                            style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Student
-                            Wellness Program</a></li>
+                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="guideline-link" data-policy="promotion" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Promotion & Detention Rules</a></li>
+                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="guideline-link" data-policy="conduct" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Student Code of Conduct</a></li>
+                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="guideline-link" data-policy="refund" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Student Fee Refund Policy</a></li>
+                    <li style="font-size: 14px; color: var(--text-secondary);">📜 <a href="#" class="guideline-link" data-policy="wellness" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">Student Wellness Program</a></li>
                 </ul>
             </div>
         </div>
     </main>
+
+    <!-- Modals Container -->
+    <!-- 1. Access Files Modal -->
+    <div id="modalFiles" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📁 CHARUSAT Course Resource Library</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 16px; color: var(--text-secondary);">Select semester and subject to download official course presentations, lab manuals, and reference notes.</p>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resource Title</th>
+                                <th>Subject / Code</th>
+                                <th>File Format</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">Fundamentals of Data Structure & Algorithm Notes</td>
+                                <td>CSUC201 (FDSA)</td>
+                                <td><span class="badge badge-success">PDF (14.2 MB)</span></td>
+                                <td><button class="btn btn-secondary download-file-btn" data-filename="CSUC201_FDSA_Notes.pdf" style="padding: 6px 12px; font-size: 12px;">Download</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">Web Development Frameworks Lab Manual</td>
+                                <td>ITUE204 (WDF)</td>
+                                <td><span class="badge badge-success">PDF (10.5 MB)</span></td>
+                                <td><button class="btn btn-secondary download-file-btn" data-filename="ITUE204_WDF_LabManual.pdf" style="padding: 6px 12px; font-size: 12px;">Download</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">Object Oriented Programming Lab Exercises</td>
+                                <td>CEUE203 (OOP)</td>
+                                <td><span class="badge badge-success">PDF (8.7 MB)</span></td>
+                                <td><button class="btn btn-secondary download-file-btn" data-filename="CEUE203_OOP_Exercises.pdf" style="padding: 6px 12px; font-size: 12px;">Download</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">Fundamentals of Computer Networks Guide</td>
+                                <td>ITUC201 (FCN)</td>
+                                <td><span class="badge badge-success">PDF (16.0 MB)</span></td>
+                                <td><button class="btn btn-secondary download-file-btn" data-filename="ITUC201_FCN_Guide.pdf" style="padding: 6px 12px; font-size: 12px;">Download</button></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">Discrete Mathematics Problem Sets</td>
+                                <td>MSUD203 (MATHS)</td>
+                                <td><span class="badge badge-success">PDF (12.1 MB)</span></td>
+                                <td><button class="btn btn-secondary download-file-btn" data-filename="MSUD203_Maths_ProblemSet.pdf" style="padding: 6px 12px; font-size: 12px;">Download</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Open Assignments Modal -->
+    <div id="modalAssignments" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📝 Active Lab Assignments & Submissions</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Assignment Title</th>
+                                <th>Course</th>
+                                <th>Deadline</th>
+                                <th>Status</th>
+                                <th>Upload</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">WDF Lab 4: Responsive Component Architecture</td>
+                                <td>ITUE204 (WDF)</td>
+                                <td>Tomorrow, 11:59 PM</td>
+                                <td><span class="badge badge-warning" id="status-assign-1">Pending</span></td>
+                                <td>
+                                    <button class="btn submit-assignment-btn" data-id="1" style="padding: 6px 12px; font-size: 12px;">Submit Assignment</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">FDSA Lab 3: Doubly Linked List & Stack Operations</td>
+                                <td>CSUC201 (FDSA)</td>
+                                <td>28 July 2026</td>
+                                <td><span class="badge badge-warning" id="status-assign-2">Pending</span></td>
+                                <td>
+                                    <button class="btn submit-assignment-btn" data-id="2" style="padding: 6px 12px; font-size: 12px;">Submit Assignment</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; color: var(--text-primary);">OOP Lab 2: Inheritance & Constructor Overloading</td>
+                                <td>CEUE203 (OOP)</td>
+                                <td>Completed</td>
+                                <td><span class="badge badge-success">Submitted</span></td>
+                                <td><button class="btn btn-secondary" disabled style="padding: 6px 12px; font-size: 12px; opacity: 0.6;">Uploaded</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Start Sandbox Code Modal -->
+    <div id="modalSandbox" class="modal-overlay">
+        <div class="modal-content" style="max-width: 850px;">
+            <div class="modal-header">
+                <h2>💻 Interactive Student Code Sandbox</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <label for="sandboxLang" style="font-size: 13px; font-weight: 600; color: var(--text-secondary);">Language:</label>
+                        <select id="sandboxLang" style="width: auto; padding: 6px 12px;">
+                            <option value="cpp">C++ 17</option>
+                            <option value="python">Python 3.10</option>
+                        </select>
+                    </div>
+                    <button id="btnRunSandboxCode" class="btn btn-success" style="padding: 8px 20px;">▶ Run Code</button>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <textarea id="sandboxCodeEditor" class="sandbox-editor-box" rows="8">#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Welcome to CHARUSAT Programming Sandbox!" << endl;
+    cout << "Student Enrollment: 25CS009" << endl;
+    
+    int a = 15, b = 25;
+    cout << "Sum calculation: " << (a + b) << endl;
+    return 0;
+}</textarea>
+                </div>
+
+                <h3 style="font-size: 14px; margin-top: 16px; margin-bottom: 6px; color: var(--text-secondary);">Output Console:</h3>
+                <div id="sandboxTerminal" class="sandbox-terminal">Click "Run Code" to execute code...</div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal-btn">Close Sandbox</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. General Info Popup Modal -->
+    <div id="modalInfo" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalInfoTitle">Information Portal</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div id="modalInfoBody" class="modal-body">
+                <!-- Injected dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

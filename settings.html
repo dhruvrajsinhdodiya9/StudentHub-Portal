@@ -19,18 +19,17 @@
             </div>
         </div>
 
-        <form style="display: flex; flex-direction: column; gap: 24px;">
+        <form id="settingsForm" style="display: flex; flex-direction: column; gap: 24px;">
             <div class="grid-3">
                 <!-- Account Settings -->
                 <div class="card">
                     <h2>👤 Account Details</h2>
                     <div style="margin: 16px 0;">
-                        <p style="font-size: 14px; margin-bottom: 8px;"><strong>Full Name:</strong> Dhruvrajsinh Dodiya
-                        </p>
-                        <p style="font-size: 14px; margin-bottom: 16px;"><strong>Email:</strong> dhruv@example.com</p>
+                        <p style="font-size: 14px; margin-bottom: 8px;"><strong>Full Name:</strong> <span id="settingDispName">Dhruvrajsinh Dodiya</span></p>
+                        <p style="font-size: 14px; margin-bottom: 8px;"><strong>Username:</strong> <span id="settingDispUser">25CS009</span></p>
+                        <p style="font-size: 14px; margin-bottom: 16px;"><strong>Email:</strong> <span id="settingDispEmail">dhruvrajsinhdodiya4208@gmail.com</span></p>
                     </div>
-                    <button type="button" class="btn btn-secondary edit-profile-btn" style="width: 100%;">Edit Profile
-                        Info</button>
+                    <button type="button" class="btn btn-secondary edit-profile-btn" style="width: 100%;">Edit Profile Info</button>
                 </div>
 
                 <!-- Notifications Preferences -->
@@ -63,6 +62,7 @@
             <!-- Password Modification Card -->
             <div class="card">
                 <h2>Update Portal Password</h2>
+                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Passwords must be at least 8 characters long and contain uppercase, lowercase, and numbers.</p>
                 <div class="grid-3" style="margin-bottom: 0; margin-top: 16px;">
                     <div class="form-group">
                         <label for="curr-pwd">Current Password</label>
@@ -78,14 +78,13 @@
                     </div>
                 </div>
                 <div style="text-align: right; margin-top: 12px;">
-                    <button type="button" class="btn btn-secondary update-password-btn">Update Password</button>
+                    <button type="button" id="btnUpdatePassword" class="btn btn-secondary update-password-btn">Update Password</button>
                 </div>
             </div>
 
             <!-- Submit Controls -->
             <div style="text-align: center; margin-top: 8px;">
-                <button type="submit" class="btn" style="padding: 14px 48px; font-size: 15px;">Save Settings
-                    Preference</button>
+                <button type="submit" class="btn" style="padding: 14px 48px; font-size: 15px;">Save Settings Preference</button>
             </div>
         </form>
     </main>

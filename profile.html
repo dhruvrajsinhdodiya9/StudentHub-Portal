@@ -22,15 +22,17 @@
         <section class="grid-3" style="grid-template-columns: 1fr 2fr;">
             <!-- Avatar card -->
             <div class="card"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px;">
-                <div
-                    style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-color); margin-bottom: 20px; box-shadow: 0 4px 15px var(--accent-glow);">
-                    <img src="" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px;">
+                <div style="position: relative; margin-bottom: 20px;">
+                    <div
+                        style="width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), var(--accent-teal)); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 700; box-shadow: 0 4px 15px var(--accent-glow);">
+                        <span id="profileInitials">DD</span>
+                    </div>
+                    <img src="charusat-logo.jpg" alt="CHARUSAT Seal" style="position: absolute; bottom: -4px; right: -4px; width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--bg-card); background: #ffffff; object-fit: contain; padding: 2px;">
                 </div>
-                <h2 style="margin-bottom: 4px;">Dhruvrajsinh Dodiya</h2>
-                <p style="color: var(--accent-color); font-weight: 500; font-size: 14px; margin-bottom: 16px;">B.Tech
-                    Computer Science & Eng.</p>
-                <button class="btn edit-profile-btn" style="width: 100%;">Edit Profile Details</button>
+                <h2 id="profileName" style="margin-bottom: 4px;">Dhruvrajsinh Dodiya</h2>
+                <p style="color: var(--accent-color); font-weight: 500; font-size: 14px; margin-bottom: 16px;">B.Tech Computer Science & Eng.</p>
+                <a href="settings.html" class="btn edit-profile-btn" style="width: 100%;">Edit Profile Details</a>
             </div>
 
             <!-- Academic & Personal Info Card -->
@@ -43,13 +45,13 @@
                         <table style="width: 100%;">
                             <tbody>
                                 <tr>
-                                    <td style="width: 35%; font-weight: 600; color: var(--text-primary);">Student ID
+                                    <td style="width: 35%; font-weight: 600; color: var(--text-primary);">Student ID (Username)
                                     </td>
-                                    <td>25CS009</td>
+                                    <td id="profileStudentId">25CS009</td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: 600; color: var(--text-primary);">Email Address</td>
-                                    <td>dhruvrajsinhdodiya4208@gmail.com</td>
+                                    <td id="profileEmail">dhruvrajsinhdodiya4208@gmail.com</td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: 600; color: var(--text-primary);">Phone Number</td>
