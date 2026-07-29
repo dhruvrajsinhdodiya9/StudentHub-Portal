@@ -41,9 +41,9 @@ function setCurrentUser(user) {
 // 2. Immediate Route Access Protection Guard
 (function accessGuard() {
     const path = window.location.pathname;
-    const page = path.split('/').pop().toLowerCase() || 'home.html';
+    const page = path.split('/').pop().toLowerCase() || 'index.html';
 
-    const publicPages = ['home.html', 'login.html', 'signup.html', ''];
+    const publicPages = ['index.html', 'home.html', 'login.html', 'signup.html', ''];
     const isProtected = !publicPages.includes(page);
     const currentUser = getCurrentUser();
 
@@ -226,11 +226,11 @@ function syncUserInterfaceData() {
 // 7. Inject Dynamic Navbar & Footer
 function injectCommonElements() {
     const path = window.location.pathname;
-    const page = path.split('/').pop().toLowerCase() || 'home.html';
+    const page = path.split('/').pop().toLowerCase() || 'index.html';
     const currentUser = getCurrentUser();
 
     const isAuthPage = page === 'login.html' || page === 'signup.html';
-    const isHomePage = page === 'home.html' || page === '';
+    const isHomePage = page === 'index.html' || page === 'home.html' || page === '';
 
     // A. Inject Theme Toggle on auth pages
     if (isAuthPage && !document.querySelector('.auth-theme-box')) {
@@ -252,13 +252,13 @@ function injectCommonElements() {
         let navLinksHTML = '';
         if (!currentUser) {
             navLinksHTML = `
-                <li><a href="home.html" class="${isHomePage ? 'active' : ''}">Home</a></li>
+                <li><a href="index.html" class="${isHomePage ? 'active' : ''}">Home</a></li>
                 <li><a href="login.html" class="${page === 'login.html' ? 'active' : ''}">Login</a></li>
                 <li><a href="signup.html" class="${page === 'signup.html' ? 'active' : ''}">Sign Up</a></li>
             `;
         } else {
             navLinksHTML = `
-                <li><a href="home.html" class="${page === 'home.html' ? 'active' : ''}">Home</a></li>
+                <li><a href="index.html" class="${isHomePage ? 'active' : ''}">Home</a></li>
                 <li><a href="dashboard.html" class="${page === 'dashboard.html' ? 'active' : ''}">Dashboard</a></li>
                 <li><a href="profile.html" class="${page === 'profile.html' ? 'active' : ''}">Profile</a></li>
                 <li><a href="attendance.html" class="${page === 'attendance.html' ? 'active' : ''}">Attendance</a></li>
@@ -281,7 +281,7 @@ function injectCommonElements() {
 
         header.innerHTML = `
             <div class="navbar">
-                <a href="home.html" class="nav-brand">
+                <a href="index.html" class="nav-brand">
                     <img src="charusat-logo.jpg" alt="CHARUSAT Logo" class="nav-logo-img">
                     <span>CHARUSAT Portal</span>
                 </a>
