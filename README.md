@@ -1,1 +1,1 @@
-# StudentHub-Portal in progress at https://dhruvrajsinhdodiya9.github.io/StudentHub-Portal/
+# StudentHub-Portal in progress 
