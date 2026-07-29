@@ -178,9 +178,9 @@ function toggleTheme() {
 
 function updateThemeToggleIcon() {
     const btns = document.querySelectorAll('.theme-toggle-btn');
-    const isLight = document.body.classList.contains('light-theme');
+    const isLight = document.documentElement.classList.contains('light-theme') || document.body.classList.contains('light-theme');
     btns.forEach(btn => {
-        btn.innerHTML = isLight ? '🌙' : '☀️';
+        btn.innerText = isLight ? 'Dark' : 'Light';
     });
 }
 
@@ -239,7 +239,7 @@ function injectCommonElements() {
         actionsDiv.style.position = 'absolute';
         actionsDiv.style.top = '20px';
         actionsDiv.style.right = '20px';
-        actionsDiv.innerHTML = `<button class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>`;
+        actionsDiv.innerHTML = `<button class="theme-toggle-btn" aria-label="Toggle Theme">Theme</button>`;
         document.body.appendChild(actionsDiv);
         actionsDiv.querySelector('.theme-toggle-btn').addEventListener('click', toggleTheme);
     }
@@ -276,7 +276,7 @@ function injectCommonElements() {
             <div class="user-nav-badge" title="Logged in as ${currentUser.name}">
                 <span>👤 ${currentUser.username}</span>
             </div>
-            <button id="navLogoutBtn" class="logout-btn" title="Log Out">🚪</button>
+            <button id="navLogoutBtn" class="logout-btn" title="Log Out">Logout</button>
         ` : '';
 
         header.innerHTML = `
@@ -289,7 +289,7 @@ function injectCommonElements() {
                     ${navLinksHTML}
                 </ul>
                 <div class="nav-actions">
-                    <button class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                    <button class="theme-toggle-btn" aria-label="Toggle Theme">Theme</button>
                     ${userBadgeHTML}
                 </div>
             </div>

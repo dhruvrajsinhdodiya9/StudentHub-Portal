@@ -240,12 +240,14 @@ body {
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     cursor: pointer;
-    width: 38px;
+    padding: 6px 14px;
     height: 38px;
-    border-radius: 50%;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
     transition: var(--transition);
 }
 
