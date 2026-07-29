@@ -87,44 +87,79 @@ document.addEventListener('DOMContentLoaded', () => {
     syncUserInterfaceData();
 });
 
-// 4. Global Toast Notification Helper
-function showToast(message, type = 'success') {
-    const existing = document.querySelectorAll('.custom-toast');
-    existing.forEach(el => el.remove());
+// 4. Global Glassmorphic Toast Notification Helper
+function showToast(message, type = 'success', customTitle = null) {
+    let container = document.querySelector('.glass-toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'glass-toast-container';
+        document.body.appendChild(container);
+    }
 
     const toast = document.createElement('div');
-    toast.className = 'custom-toast';
+    toast.className = `glass-toast glass-toast-${type}`;
 
-    Object.assign(toast.style, {
-        position: 'fixed',
-        bottom: '24px',
-        right: '24px',
-        padding: '14px 24px',
-        borderRadius: '10px',
-        backgroundColor: type === 'success' ? 'var(--success, #10b981)' : (type === 'error' ? 'var(--danger, #ef4444)' : 'var(--accent-color)'),
-        color: '#ffffff',
-        fontWeight: '600',
-        fontSize: '14px',
-        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
-        zIndex: '10000',
-        opacity: '0',
-        transform: 'translateY(20px)',
-        transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+    let iconSVG = '';
+    let titleText = customTitle;
+
+    if (type === 'success') {
+        if (!titleText) titleText = 'Success';
+        iconSVG = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+    } else if (type === 'error') {
+        if (!titleText) titleText = 'Attention Required';
+        iconSVG = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
+    } else {
+        if (!titleText) titleText = 'Information';
+        iconSVG = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
+    }
+
+    toast.innerHTML = `
+        <div class="glass-toast-icon">${iconSVG}</div>
+        <div class="glass-toast-content">
+            <div class="glass-toast-title">${titleText}</div>
+            <div class="glass-toast-message">${message}</div>
+        </div>
+        <button class="glass-toast-close" aria-label="Close notification">&times;</button>
+        <div class="glass-toast-progress"></div>
+    `;
+
+    container.appendChild(toast);
+
+    // Trigger Entrance Animation
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
     });
 
-    toast.innerText = message;
-    document.body.appendChild(toast);
+    // Smooth Progress Bar Animation
+    const progressBar = toast.querySelector('.glass-toast-progress');
+    if (progressBar) {
+        progressBar.style.transition = 'transform 3.5s linear';
+        progressBar.style.transform = 'scaleX(1)';
+        setTimeout(() => {
+            progressBar.style.transform = 'scaleX(0)';
+        }, 50);
+    }
 
-    setTimeout(() => {
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateY(0)';
-    }, 50);
-
-    setTimeout(() => {
+    // Dismiss Logic
+    let dismissed = false;
+    const dismiss = () => {
+        if (dismissed) return;
+        dismissed = true;
+        toast.classList.remove('show');
+        toast.style.transform = 'translateX(100px) scale(0.85)';
         toast.style.opacity = '0';
-        toast.style.transform = 'translateY(-10px)';
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
+        setTimeout(() => {
+            toast.remove();
+            if (container.children.length === 0) {
+                container.remove();
+            }
+        }, 400);
+    };
+
+    const closeBtn = toast.querySelector('.glass-toast-close');
+    if (closeBtn) closeBtn.addEventListener('click', dismiss);
+
+    setTimeout(dismiss, 3600);
 }
 
 // 5. Theme Toggle Functionality
@@ -226,7 +261,7 @@ function injectCommonElements() {
                 <li><a href="home.html" class="${page === 'home.html' ? 'active' : ''}">Home</a></li>
                 <li><a href="dashboard.html" class="${page === 'dashboard.html' ? 'active' : ''}">Dashboard</a></li>
                 <li><a href="profile.html" class="${page === 'profile.html' ? 'active' : ''}">Profile</a></li>
-                <li><a href="attendence.html" class="${page === 'attendence.html' ? 'active' : ''}">Attendance</a></li>
+                <li><a href="attendance.html" class="${page === 'attendance.html' ? 'active' : ''}">Attendance</a></li>
                 <li><a href="course.html" class="${page === 'course.html' ? 'active' : ''}">Courses</a></li>
                 <li><a href="schedule.html" class="${page === 'schedule.html' ? 'active' : ''}">Schedule</a></li>
                 <li><a href="grades.html" class="${page === 'grades.html' ? 'active' : ''}">Grades</a></li>
