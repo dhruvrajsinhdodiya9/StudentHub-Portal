@@ -1028,3 +1028,597 @@ Resulting Grade: A+
         });
     });
 }
+
+// ==========================================================================
+// 10. Web Notifications Engine (Practical 15)
+// ==========================================================================
+function initWebNotifications() {
+    if ('Notification' in window && Notification.permission === 'default') {
+        document.addEventListener('click', function reqPerm() {
+            Notification.requestPermission();
+            document.removeEventListener('click', reqPerm);
+        }, { once: true });
+    }
+}
+
+function triggerWebNotification(title, options = {}) {
+    showToast(`${title}: ${options.body || ''}`, 'info');
+    if ('Notification' in window && Notification.permission === 'granted') {
+        try {
+            new Notification(title, {
+                icon: 'charusat-logo.jpg',
+                badge: 'charusat-logo.jpg',
+                ...options
+            });
+        } catch (e) {
+            console.log('Web Notification fallback active:', e);
+        }
+    }
+}
+
+// ==========================================================================
+// 11. Dependent Dropdowns (Country -> State -> City)
+// ==========================================================================
+const locationData = {
+    "India": {
+        "Gujarat": ["Anand", "Ahmedabad", "Vadodara", "Surat", "Rajkot", "Gandhinagar"],
+        "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Nashik", "Thane"],
+        "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur", "Kota"],
+        "Delhi": ["New Delhi", "North Delhi", "South Delhi"]
+    },
+    "USA": {
+        "California": ["Los Angeles", "San Francisco", "San Jose", "San Diego"],
+        "Texas": ["Houston", "Austin", "Dallas", "San Antonio"],
+        "New York": ["New York City", "Buffalo", "Albany", "Rochester"]
+    },
+    "UK": {
+        "England": ["London", "Manchester", "Birmingham", "Liverpool"],
+        "Scotland": ["Edinburgh", "Glasgow", "Aberdeen"]
+    }
+};
+
+function initDependentDropdowns() {
+    const bindDropdownPair = (countryId, stateId, cityId) => {
+        const countryEl = document.getElementById(countryId);
+        const stateEl = document.getElementById(stateId);
+        const cityEl = document.getElementById(cityId);
+
+        if (!countryEl || !stateEl || !cityEl) return;
+
+        countryEl.addEventListener('change', () => {
+            const countryVal = countryEl.value;
+            stateEl.innerHTML = '<option value="">Select State</option>';
+            cityEl.innerHTML = '<option value="">Select City</option>';
+            cityEl.disabled = true;
+
+            if (countryVal && locationData[countryVal]) {
+                stateEl.disabled = false;
+                Object.keys(locationData[countryVal]).forEach(state => {
+                    const opt = document.createElement('option');
+                    opt.value = state;
+                    opt.textContent = state;
+                    stateEl.appendChild(opt);
+                });
+            } else {
+                stateEl.disabled = true;
+            }
+        });
+
+        stateEl.addEventListener('change', () => {
+            const countryVal = countryEl.value;
+            const stateVal = stateEl.value;
+            cityEl.innerHTML = '<option value="">Select City</option>';
+
+            if (countryVal && stateVal && locationData[countryVal] && locationData[countryVal][stateVal]) {
+                cityEl.disabled = false;
+                locationData[countryVal][stateVal].forEach(city => {
+                    const opt = document.createElement('option');
+                    opt.value = city;
+                    opt.textContent = city;
+                    cityEl.appendChild(opt);
+                });
+            } else {
+                cityEl.disabled = true;
+            }
+        });
+    };
+
+    bindDropdownPair('contactCountry', 'contactState', 'contactCity');
+    bindDropdownPair('feedbackCountry', 'feedbackState', 'feedbackCity');
+}
+
+// ==========================================================================
+// 12. Canvas CAPTCHA Generator & Validator (Practical 5 Advanced)
+// ==========================================================================
+const captchaStore = {};
+
+function generateRandomCaptchaText(length = 5) {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let text = '';
+    for (let i = 0; i < length; i++) {
+        text += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return text;
+}
+
+function renderCanvasCaptcha(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const width = canvas.width;
+    const height = canvas.height;
+    const text = generateRandomCaptchaText(5);
+    captchaStore[canvasId] = text;
+
+    // Background
+    ctx.fillStyle = '#f1f5f9';
+    ctx.fillRect(0, 0, width, height);
+
+    // Random skewed noise lines
+    for (let i = 0; i < 6; i++) {
+        ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 200)}, ${Math.floor(Math.random() * 200)}, ${Math.floor(Math.random() * 200)}, 0.5)`;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(Math.random() * width, Math.random() * height);
+        ctx.lineTo(Math.random() * width, Math.random() * height);
+        ctx.stroke();
+    }
+
+    // Noise dots
+    for (let i = 0; i < 30; i++) {
+        ctx.fillStyle = `rgba(${Math.floor(Math.random() * 200)}, ${Math.floor(Math.random() * 200)}, ${Math.floor(Math.random() * 200)}, 0.6)`;
+        ctx.beginPath();
+        ctx.arc(Math.random() * width, Math.random() * height, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    // Render skewed characters
+    ctx.font = 'bold 22px Outfit, sans-serif';
+    const charWidth = width / (text.length + 1);
+
+    for (let i = 0; i < text.length; i++) {
+        ctx.save();
+        const x = (i + 0.8) * charWidth;
+        const y = height / 1.4;
+        const angle = (Math.random() - 0.5) * 0.4;
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+        ctx.fillStyle = `rgb(${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 150)})`;
+        ctx.fillText(text[i], 0, 0);
+        ctx.restore();
+    }
+}
+
+function initCanvasCaptcha() {
+    ['contactCaptchaCanvas', 'feedbackCaptchaCanvas'].forEach(canvasId => {
+        renderCanvasCaptcha(canvasId);
+        const canvas = document.getElementById(canvasId);
+        if (canvas) {
+            canvas.addEventListener('click', () => renderCanvasCaptcha(canvasId));
+        }
+    });
+
+    const refreshContactBtn = document.getElementById('refreshContactCaptchaBtn');
+    if (refreshContactBtn) {
+        refreshContactBtn.addEventListener('click', () => renderCanvasCaptcha('contactCaptchaCanvas'));
+    }
+
+    const refreshFeedbackBtn = document.getElementById('refreshFeedbackCaptchaBtn');
+    if (refreshFeedbackBtn) {
+        refreshFeedbackBtn.addEventListener('click', () => renderCanvasCaptcha('feedbackCaptchaCanvas'));
+    }
+}
+
+// ==========================================================================
+// 13. Contact & Feedback Forms Logic
+// ==========================================================================
+function initContactFeedbackForms() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+            const captchaInput = document.getElementById('contactCaptchaInput').value.trim().toUpperCase();
+            const expectedCaptcha = (captchaStore['contactCaptchaCanvas'] || '').toUpperCase();
+
+            if (!name || !email || !subject || !message) {
+                showToast('Please fill out all required fields marked with *.', 'error');
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showToast('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            if (captchaInput !== expectedCaptcha) {
+                showToast('Incorrect CAPTCHA verification code. Please try again.', 'error');
+                renderCanvasCaptcha('contactCaptchaCanvas');
+                document.getElementById('contactCaptchaInput').value = '';
+                return;
+            }
+
+            showToast('Inquiry submitted successfully! Our helpdesk will respond within 24 hours.');
+            triggerWebNotification('Inquiry Submitted', { body: `Thank you ${name}. Inquiry "${subject}" received.` });
+            contactForm.reset();
+            renderCanvasCaptcha('contactCaptchaCanvas');
+        });
+    }
+
+    const feedbackForm = document.getElementById('feedbackForm');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('feedbackName').value.trim();
+            const email = document.getElementById('feedbackEmail').value.trim();
+            const category = document.getElementById('feedbackCategory').value;
+            const rating = document.getElementById('feedbackRating').value;
+            const subject = document.getElementById('feedbackSubject').value.trim();
+            const comments = document.getElementById('feedbackComments').value.trim();
+            const captchaInput = document.getElementById('feedbackCaptchaInput').value.trim().toUpperCase();
+            const expectedCaptcha = (captchaStore['feedbackCaptchaCanvas'] || '').toUpperCase();
+
+            if (!name || !email || !category || !subject || !comments) {
+                showToast('Please complete all required fields.', 'error');
+                return;
+            }
+
+            if (captchaInput !== expectedCaptcha) {
+                showToast('Incorrect CAPTCHA code. Please re-enter.', 'error');
+                renderCanvasCaptcha('feedbackCaptchaCanvas');
+                document.getElementById('feedbackCaptchaInput').value = '';
+                return;
+            }
+
+            showToast(`Thank you ${name}! Your ${rating}-star feedback has been registered with IQAC.`);
+            triggerWebNotification('Feedback Recorded', { body: `Category: ${category} | Rating: ${rating}/5` });
+            feedbackForm.reset();
+            renderCanvasCaptcha('feedbackCaptchaCanvas');
+        });
+    }
+}
+
+// ==========================================================================
+// 14. Admin Dashboard Management (CRUD & Canvas Analytics & CSV Export)
+// ==========================================================================
+function getAdminStudentsData() {
+    const stored = localStorage.getItem('portal_admin_students');
+    if (stored) return JSON.parse(stored);
+
+    const defaultStudents = [
+        { id: 1, enrollment: '25CS001', name: 'Aarav Patel', email: 'aarav.cs001@charusat.edu.in', department: 'Computer Engineering', year: '3rd Year', gpa: '9.12', status: 'Active' },
+        { id: 2, enrollment: '25CS002', name: 'Ananya Sharma', email: 'ananya.cs002@charusat.edu.in', department: 'Computer Engineering', year: '3rd Year', gpa: '8.85', status: 'Active' },
+        { id: 3, enrollment: '25CS003', name: 'Bhavya Shah', email: 'bhavya.cs003@charusat.edu.in', department: 'Information Technology', year: '3rd Year', gpa: '7.90', status: 'Active' },
+        { id: 4, enrollment: '25CS004', name: 'Devansh Joshi', email: 'devansh.cs004@charusat.edu.in', department: 'Computer Engineering', year: '3rd Year', gpa: '8.45', status: 'Active' },
+        { id: 5, enrollment: '25CS009', name: 'Dhruvrajsinh Dodiya', email: 'dhruvrajsinhdodiya4208@gmail.com', department: 'Computer Engineering', year: '3rd Year', gpa: '9.45', status: 'Active' }
+    ];
+    localStorage.setItem('portal_admin_students', JSON.stringify(defaultStudents));
+    return defaultStudents;
+}
+
+function saveAdminStudentsData(students) {
+    localStorage.setItem('portal_admin_students', JSON.stringify(students));
+}
+
+function getAdminEventsData() {
+    const stored = localStorage.getItem('portal_admin_events');
+    if (stored) return JSON.parse(stored);
+
+    const defaultEvents = [
+        { id: 1, title: 'TechVista 2026 - Annual Tech Fest', category: 'Technical', date: '2026-09-15', venue: 'CHARUSAT Auditorium', seats: 350, registeredCount: 210, status: 'Open' },
+        { id: 2, title: 'AI & Deep Learning Workshop', category: 'Workshop', date: '2026-08-22', venue: 'Seminar Hall 506', seats: 120, registeredCount: 95, status: 'Open' },
+        { id: 3, title: 'Cognizance 2026 Coding Challenge', category: 'Competition', date: '2026-08-10', venue: 'Computer Lab 3', seats: 80, registeredCount: 80, status: 'Closed' }
+    ];
+    localStorage.setItem('portal_admin_events', JSON.stringify(defaultEvents));
+    return defaultEvents;
+}
+
+function saveAdminEventsData(events) {
+    localStorage.setItem('portal_admin_events', JSON.stringify(events));
+}
+
+function getAdminAuditData() {
+    const stored = localStorage.getItem('portal_admin_audit');
+    if (stored) return JSON.parse(stored);
+
+    const defaultAudit = [
+        { id: 101, timestamp: '2026-07-30 10:15:22', role: 'admin', action: 'SYSTEM_INIT', details: 'Database schema and seed values initialized.', ip: '127.0.0.1' },
+        { id: 102, timestamp: '2026-07-30 11:42:05', role: 'student', action: 'USER_LOGIN', details: 'User 25CS009 logged in successfully.', ip: '127.0.0.1' },
+        { id: 103, timestamp: '2026-07-30 12:05:19', role: 'admin', action: 'STUDENT_ADD', details: 'Added new student record 25CS015.', ip: '127.0.0.1' }
+    ];
+    localStorage.setItem('portal_admin_audit', JSON.stringify(defaultAudit));
+    return defaultAudit;
+}
+
+function renderAdminTableRows() {
+    const studentBody = document.getElementById('adminStudentTableBody');
+    if (studentBody) {
+        const students = getAdminStudentsData();
+        const searchInput = document.getElementById('adminStudentSearch');
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+        const filtered = students.filter(s => s.name.toLowerCase().includes(query) || s.enrollment.toLowerCase().includes(query) || s.department.toLowerCase().includes(query));
+
+        studentBody.innerHTML = filtered.map(s => `
+            <tr>
+                <td style="font-weight: 600; color: var(--text-primary);">${s.enrollment}</td>
+                <td>${s.name}</td>
+                <td>${s.email}</td>
+                <td>${s.department}</td>
+                <td>${s.year}</td>
+                <td style="font-weight: 700; color: var(--accent-color);">${s.gpa}</td>
+                <td><span class="badge badge-success">${s.status}</span></td>
+                <td>
+                    <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.8rem;" onclick="deleteAdminStudent(${s.id})">Delete</button>
+                </td>
+            </tr>
+        `).join('');
+
+        const statStudents = document.getElementById('adminStatStudents');
+        if (statStudents) statStudents.innerText = students.length;
+    }
+
+    const eventBody = document.getElementById('adminEventTableBody');
+    if (eventBody) {
+        const events = getAdminEventsData();
+        eventBody.innerHTML = events.map(e => `
+            <tr>
+                <td>#${e.id}</td>
+                <td style="font-weight: 600; color: var(--text-primary);">${e.title}</td>
+                <td><span class="badge badge-info">${e.category}</span></td>
+                <td>${e.date}</td>
+                <td>${e.venue}</td>
+                <td>${e.registeredCount}/${e.seats}</td>
+                <td><span class="badge ${e.status === 'Open' ? 'badge-success' : 'badge-warning'}">${e.status}</span></td>
+                <td>
+                    <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.8rem;" onclick="deleteAdminEvent(${e.id})">Delete</button>
+                </td>
+            </tr>
+        `).join('');
+
+        const statEvents = document.getElementById('adminStatEvents');
+        if (statEvents) statEvents.innerText = events.length;
+
+        const statRegs = document.getElementById('adminStatRegs');
+        if (statRegs) {
+            const totalRegs = events.reduce((sum, ev) => sum + (ev.registeredCount || 0), 0);
+            statRegs.innerText = totalRegs;
+        }
+    }
+
+    const auditBody = document.getElementById('adminAuditTableBody');
+    if (auditBody) {
+        const audit = getAdminAuditData();
+        auditBody.innerHTML = audit.map(a => `
+            <tr>
+                <td>#${a.id}</td>
+                <td>${a.timestamp}</td>
+                <td><span class="badge badge-purple">${a.role}</span></td>
+                <td style="font-weight: 600;">${a.action}</td>
+                <td>${a.details}</td>
+                <td>${a.ip}</td>
+            </tr>
+        `).join('');
+
+        const statAudit = document.getElementById('adminStatAudit');
+        if (statAudit) statAudit.innerText = audit.length;
+    }
+}
+
+function deleteAdminStudent(id) {
+    let students = getAdminStudentsData();
+    students = students.filter(s => s.id !== id);
+    saveAdminStudentsData(students);
+    renderAdminTableRows();
+    renderAdminChart();
+    showToast('Student record deleted.', 'info');
+}
+
+function deleteAdminEvent(id) {
+    let events = getAdminEventsData();
+    events = events.filter(e => e.id !== id);
+    saveAdminEventsData(events);
+    renderAdminTableRows();
+    renderAdminChart();
+    showToast('Event record deleted.', 'info');
+}
+
+function exportToCSV(filename, rows) {
+    const csvContent = 'data:text/csv;charset=utf-8,' + rows.map(e => e.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')).join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showToast(`Exported ${filename} successfully!`);
+}
+
+function renderAdminChart() {
+    const canvas = document.getElementById('adminAnalyticsChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const width = canvas.width;
+    const height = canvas.height;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const events = getAdminEventsData();
+    const categories = ['Technical', 'Workshop', 'Competition', 'Sports', 'Cultural'];
+    const counts = categories.map(cat => {
+        return events.filter(e => e.category.toLowerCase() === cat.toLowerCase())
+            .reduce((sum, e) => sum + (e.registeredCount || 20), 0) || Math.floor(Math.random() * 80 + 30);
+    });
+
+    const maxVal = Math.max(...counts, 250);
+    const barWidth = 60;
+    const gap = 50;
+    const startX = 80;
+    const startY = height - 50;
+
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(startX - 20, startY);
+    ctx.lineTo(startX + categories.length * (barWidth + gap), startY);
+    ctx.stroke();
+
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '12px Outfit, sans-serif';
+    ctx.fillText('Event Registrations & Participation Analytics', startX, 25);
+
+    const colors = ['#3b82f6', '#14b8a6', '#8b5cf6', '#f59e0b', '#06b6d4'];
+
+    categories.forEach((cat, idx) => {
+        const val = counts[idx];
+        const barHeight = (val / maxVal) * (height - 90);
+        const x = startX + idx * (barWidth + gap);
+        const y = startY - barHeight;
+
+        const grad = ctx.createLinearGradient(x, y, x, startY);
+        grad.addColorStop(0, colors[idx % colors.length]);
+        grad.addColorStop(1, 'rgba(15, 23, 42, 0.4)');
+
+        ctx.fillStyle = grad;
+        ctx.fillRect(x, y, barWidth, barHeight);
+
+        ctx.fillStyle = '#f8fafc';
+        ctx.font = 'bold 13px Outfit, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(val.toString(), x + barWidth / 2, y - 8);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px Outfit, sans-serif';
+        ctx.fillText(cat, x + barWidth / 2, startY + 22);
+    });
+
+    ctx.textAlign = 'left';
+}
+
+function initAdminPanel() {
+    renderAdminTableRows();
+    renderAdminChart();
+
+    const searchInput = document.getElementById('adminStudentSearch');
+    if (searchInput) {
+        searchInput.addEventListener('input', renderAdminTableRows);
+    }
+
+    const addStudentModalBtn = document.getElementById('addStudentModalBtn');
+    if (addStudentModalBtn) {
+        addStudentModalBtn.addEventListener('click', () => {
+            const modal = document.getElementById('studentFormModal');
+            if (modal) modal.style.display = 'flex';
+        });
+    }
+
+    const studentCrudForm = document.getElementById('studentCrudForm');
+    if (studentCrudForm) {
+        studentCrudForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const enrollment = document.getElementById('crudStudentEnrollment').value.trim();
+            const name = document.getElementById('crudStudentName').value.trim();
+            const email = document.getElementById('crudStudentEmail').value.trim();
+            const department = document.getElementById('crudStudentDept').value;
+            const gpa = document.getElementById('crudStudentGPA').value || '8.50';
+
+            const students = getAdminStudentsData();
+            students.unshift({
+                id: Date.now(),
+                enrollment,
+                name,
+                email,
+                department,
+                year: '3rd Year',
+                gpa,
+                status: 'Active'
+            });
+
+            saveAdminStudentsData(students);
+            renderAdminTableRows();
+            renderAdminChart();
+
+            document.getElementById('studentFormModal').style.display = 'none';
+            studentCrudForm.reset();
+            showToast(`Student record for ${name} added successfully!`);
+        });
+    }
+
+    const addEventModalBtn = document.getElementById('addEventModalBtn');
+    if (addEventModalBtn) {
+        addEventModalBtn.addEventListener('click', () => {
+            const modal = document.getElementById('eventFormModal');
+            if (modal) modal.style.display = 'flex';
+        });
+    }
+
+    const eventCrudForm = document.getElementById('eventCrudForm');
+    if (eventCrudForm) {
+        eventCrudForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('crudEventTitle').value.trim();
+            const category = document.getElementById('crudEventCategory').value;
+            const date = document.getElementById('crudEventDate').value;
+            const venue = document.getElementById('crudEventVenue').value.trim();
+            const desc = document.getElementById('crudEventDesc').value.trim();
+
+            const events = getAdminEventsData();
+            events.unshift({
+                id: events.length + 1,
+                title,
+                category,
+                date,
+                venue,
+                seats: 100,
+                registeredCount: 0,
+                status: 'Open',
+                description: desc
+            });
+
+            saveAdminEventsData(events);
+            renderAdminTableRows();
+            renderAdminChart();
+
+            document.getElementById('eventFormModal').style.display = 'none';
+            eventCrudForm.reset();
+            showToast(`New Event "${title}" created successfully!`);
+        });
+    }
+
+    const exportStudentsCSVBtn = document.getElementById('exportStudentsCSVBtn');
+    if (exportStudentsCSVBtn) {
+        exportStudentsCSVBtn.addEventListener('click', () => {
+            const students = getAdminStudentsData();
+            const rows = [['ID', 'Enrollment', 'Name', 'Email', 'Department', 'Year', 'GPA', 'Status']];
+            students.forEach(s => rows.push([s.id, s.enrollment, s.name, s.email, s.department, s.year, s.gpa, s.status]));
+            exportToCSV('CHARUSAT_Students_List.csv', rows);
+        });
+    }
+
+    const exportEventsCSVBtn = document.getElementById('exportEventsCSVBtn');
+    if (exportEventsCSVBtn) {
+        exportEventsCSVBtn.addEventListener('click', () => {
+            const events = getAdminEventsData();
+            const rows = [['ID', 'Title', 'Category', 'Date', 'Venue', 'Seats', 'Registered', 'Status']];
+            events.forEach(e => rows.push([e.id, e.title, e.category, e.date, e.venue, e.seats, e.registeredCount, e.status]));
+            exportToCSV('CHARUSAT_Events_List.csv', rows);
+        });
+    }
+}
+
+// Ensure startup additions trigger on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    initWebNotifications();
+    initDependentDropdowns();
+    initCanvasCaptcha();
+    initContactFeedbackForms();
+    initAdminPanel();
+});

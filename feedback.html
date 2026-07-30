@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CHARUSAT StudentHub Feedback - Rate campus services, facilities, faculty, and submit student satisfaction reviews.">
+    <title>CHARUSAT | Student Feedback & Grievance Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="main-content page-transition">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Student Feedback</li>
+            </ol>
+        </nav>
+
+        <!-- Header -->
+        <div class="page-header">
+            <div>
+                <h1>Student Satisfaction & Feedback Survey</h1>
+                <p>Help us improve CHARUSAT academic programs, laboratory infrastructure, library, hostel, and canteen services.</p>
+            </div>
+        </div>
+
+        <section class="grid-2">
+            <!-- Feedback Information Card -->
+            <div class="card">
+                <h2 style="color: var(--accent-color); margin-bottom: 16px;">University Feedback System</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.7;">
+                    Charotar University of Science and Technology (CHARUSAT) values student input for continuous institutional growth. All feedback submissions are confidential and reviewed directly by the Internal Quality Assurance Cell (IQAC).
+                </p>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 16px; display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <span style="font-size: 1.5rem;">🔒</span>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem;">Confidential & Secure</h4>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">Your submissions are protected and analyzed for quality assurance.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <span style="font-size: 1.5rem;">⚡</span>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem;">Prompt Resolution</h4>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">Grievances and infrastructure issues are escalated to respective department heads.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <span style="font-size: 1.5rem;">📊</span>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem;">NAAC / IQAC Benchmark</h4>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">Used for annual NAAC grading and student satisfaction index calculation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Submission Form -->
+            <div class="card">
+                <h2 style="margin-bottom: 16px;">Submit Feedback</h2>
+                <form id="feedbackForm" novalidate>
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="feedbackName">Full Name <span style="color:var(--danger)">*</span>:</label>
+                        <input type="text" id="feedbackName" name="name" class="form-input" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="feedbackEmail">Email Address <span style="color:var(--danger)">*</span>:</label>
+                        <input type="email" id="feedbackEmail" name="email" class="form-input" required placeholder="student@charusat.edu.in">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="feedbackCategory">Feedback Category <span style="color:var(--danger)">*</span>:</label>
+                        <select id="feedbackCategory" name="category" class="form-input" required>
+                            <option value="">Select Feedback Category</option>
+                            <option value="Academic Curriculum">Academic Curriculum & Teaching</option>
+                            <option value="Laboratory Facilities">Laboratory & Computing Facilities</option>
+                            <option value="Library Services">Library & Digital Resources</option>
+                            <option value="Hostel & Canteen">Hostel & Canteen Infrastructure</option>
+                            <option value="Sports & Co-Curricular">Sports & Co-Curricular Activities</option>
+                            <option value="General Portal">Student Portal & IT Infrastructure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="feedbackRating">Overall Satisfaction Rating (1 to 5 Stars):</label>
+                        <select id="feedbackRating" name="rating" class="form-input">
+                            <option value="5">⭐⭐⭐⭐⭐ 5 - Excellent</option>
+                            <option value="4">⭐⭐⭐⭐ 4 - Good</option>
+                            <option value="3">⭐⭐⭐ 3 - Satisfactory</option>
+                            <option value="2">⭐⭐ 2 - Needs Improvement</option>
+                            <option value="1">⭐ 1 - Poor</option>
+                        </select>
+                    </div>
+
+                    <!-- Dependent Dropdowns (Country -> State -> City) -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 12px;">
+                        <div>
+                            <label for="feedbackCountry" style="font-size: 0.9rem; font-weight: 600;">Country:</label>
+                            <select id="feedbackCountry" name="country" class="form-input">
+                                <option value="">Select Country</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="feedbackState" style="font-size: 0.9rem; font-weight: 600;">State:</label>
+                            <select id="feedbackState" name="state" class="form-input" disabled>
+                                <option value="">Select State</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="feedbackCity" style="font-size: 0.9rem; font-weight: 600;">City:</label>
+                            <select id="feedbackCity" name="city" class="form-input" disabled>
+                                <option value="">Select City</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="feedbackSubject">Subject / Subject Code <span style="color:var(--danger)">*</span>:</label>
+                        <input type="text" id="feedbackSubject" name="subject" class="form-input" required placeholder="e.g. ITUE203 Web Development Frameworks">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="feedbackComments">Detailed Comments & Suggestions <span style="color:var(--danger)">*</span>:</label>
+                        <textarea id="feedbackComments" name="comments" class="form-input" rows="4" required placeholder="Share your experience and specific recommendations..."></textarea>
+                    </div>
+
+                    <!-- Canvas CAPTCHA Verification -->
+                    <div class="captcha-box" style="margin-bottom: 16px; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Security Verification (CAPTCHA):</label>
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
+                            <canvas id="feedbackCaptchaCanvas" width="160" height="40" style="border: 1px solid var(--border-color); border-radius: 4px; background: #fff; cursor: pointer;" title="Click to refresh CAPTCHA"></canvas>
+                            <button type="button" id="refreshFeedbackCaptchaBtn" class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.85rem;" title="Refresh CAPTCHA">🔄 Refresh</button>
+                        </div>
+                        <input type="text" id="feedbackCaptchaInput" class="form-input" placeholder="Type CAPTCHA text shown above" required>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Submit Feedback Survey</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
