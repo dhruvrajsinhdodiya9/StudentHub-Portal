@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CHARUSAT StudentHub Contact - Reach university administration, faculty deans, and IT support services.">
+    <title>CHARUSAT | Contact & Support Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="main-content page-transition">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+            </ol>
+        </nav>
+
+        <!-- Header -->
+        <div class="page-header">
+            <div>
+                <h1>Contact University Administration</h1>
+                <p>Have questions regarding admission, enrollment, fee receipts, or campus facilities? Send us a
+                    message.</p>
+            </div>
+        </div>
+
+        <section class="grid-2">
+            <!-- Contact Details Card -->
+            <div class="card">
+                <h2 style="color: var(--accent-color); margin-bottom: 16px;">Campus Location & Directory</h2>
+                <div style="margin-bottom: 20px; line-height: 1.8; color: var(--text-secondary);">
+                    <p><strong>Charotar University of Science & Technology (CHARUSAT)</strong></p>
+                    <p>📍 CHARUSAT Campus, Off Nadiad-Petlad Highway, Changa - 388 421, Anand, Gujarat, India.</p>
+                    <p>📞 Phone: +91 2697 265011 / 265021</p>
+                    <p>✉️ General Email: <a href="mailto:info@charusat.ac.in"
+                            style="color: var(--accent-color);">info@charusat.ac.in</a></p>
+                    <p>🌐 Website: <a href="https://www.charusat.ac.in" target="_blank"
+                            style="color: var(--accent-color);">www.charusat.ac.in</a></p>
+                </div>
+                <div style="border-top: 1px solid var(--border-color); padding-top: 16px;">
+                    <h3 style="margin-bottom: 10px;">Office Hours</h3>
+                    <p style="color: var(--text-secondary);">Monday to Saturday: 09:00 AM – 04:30 PM (Closed on 2nd &
+                        4th Saturdays and Public Holidays)</p>
+                </div>
+            </div>
+
+            <!-- Contact Form with Canvas CAPTCHA & Dependent Dropdowns -->
+            <div class="card">
+                <h2 style="margin-bottom: 16px;">Send an Inquiry</h2>
+                <form id="contactForm" novalidate>
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="contactName">Your Full Name <span style="color:var(--danger)">*</span>:</label>
+                        <input type="text" id="contactName" name="name" class="form-input" required
+                            placeholder="Enter full name">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="contactEmail">Email Address <span style="color:var(--danger)">*</span>:</label>
+                        <input type="email" id="contactEmail" name="email" class="form-input" required
+                            placeholder="name@example.com">
+                    </div>
+
+                    <!-- Dependent Dropdowns (Country -> State -> City) (Practical 6 extension) -->
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 12px;">
+                        <div>
+                            <label for="contactCountry" style="font-size: 0.9rem; font-weight: 600;">Country:</label>
+                            <select id="contactCountry" name="country" class="form-input">
+                                <option value="">Select Country</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="contactState" style="font-size: 0.9rem; font-weight: 600;">State:</label>
+                            <select id="contactState" name="state" class="form-input" disabled>
+                                <option value="">Select State</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="contactCity" style="font-size: 0.9rem; font-weight: 600;">City:</label>
+                            <select id="contactCity" name="city" class="form-input" disabled>
+                                <option value="">Select City</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="contactSubject">Subject <span style="color:var(--danger)">*</span>:</label>
+                        <input type="text" id="contactSubject" name="subject" class="form-input" required
+                            placeholder="Brief subject line">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label for="contactMessage">Message Content <span style="color:var(--danger)">*</span>:</label>
+                        <textarea id="contactMessage" name="message" class="form-input" rows="4" required
+                            placeholder="Type your detailed message here..."></textarea>
+                    </div>
+
+                    <!-- Canvas CAPTCHA (Practical 5 Advanced Extension) -->
+                    <div class="captcha-box"
+                        style="margin-bottom: 16px; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px;">Security Verification
+                            (CAPTCHA):</label>
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
+                            <canvas id="contactCaptchaCanvas" width="160" height="40"
+                                style="border: 1px solid var(--border-color); border-radius: 4px; background: #fff; cursor: pointer;"
+                                title="Click to refresh CAPTCHA"></canvas>
+                            <button type="button" id="refreshContactCaptchaBtn" class="btn btn-secondary"
+                                style="padding: 6px 12px; font-size: 0.85rem;" title="Refresh CAPTCHA">🔄
+                                Refresh</button>
+                        </div>
+                        <input type="text" id="contactCaptchaInput" class="form-input"
+                            placeholder="Type CAPTCHA text shown above" required>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

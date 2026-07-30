@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "question": "How do I check my semester attendance percentage?",
+    "answer": "You can monitor live classroom attendance, subject-wise attendance breakdowns, and required medical leave exemptions under the 'Attendance' section on your portal dashboard.",
+    "category": "Academic"
+  },
+  {
+    "id": 2,
+    "question": "What is the minimum attendance required to appear for university examinations?",
+    "answer": "As per CHARUSAT academic regulations, students must maintain a minimum of 75% aggregate attendance in all theory and laboratory courses.",
+    "category": "Academic"
+  },
+  {
+    "id": 3,
+    "question": "How can I pay my semester tuition fees online?",
+    "answer": "Navigate to the 'Fees' tab, view your itemized ledger breakdown, and click 'Pay Dues Online' to complete payment via UPI, Net Banking, or Credit/Debit Card.",
+    "category": "Financial"
+  },
+  {
+    "id": 4,
+    "question": "Where can I download my semester marksheets and CGPA reports?",
+    "answer": "Go to the 'Grades' section to inspect your SPI/CPI breakdown per semester and download official PDF marksheets.",
+    "category": "Examination"
+  },
+  {
+    "id": 5,
+    "question": "How do I register for campus events, hackathons, and workshops?",
+    "answer": "Visit the 'Events' section, browse available technical/cultural events, filter by category, and click 'Register Now'. Your seat confirmation will trigger a Web Notification.",
+    "category": "Events"
+  },
+  {
+    "id": 6,
+    "question": "What should I do if I forget my portal password?",
+    "answer": "Click on 'Forgot Password' on the Login page or contact your institute IT Helpdesk with your student ID (e.g. 25CS009) to reset credentials.",
+    "category": "Account"
+  },
+  {
+    "id": 7,
+    "question": "How do I toggle between Dark Mode and Light Mode theme?",
+    "answer": "Click the 'Theme' button in the top navigation bar or settings menu. Your theme choice is automatically saved in browser localStorage.",
+    "category": "Portal"
+  },
+  {
+    "id": 8,
+    "question": "Who can access the Admin Dashboard panel?",
+    "answer": "Only accounts registered with Admin privileges (e.g., admin@charusat.ac.in) can access the role-based Admin panel to manage students, events, and audit logs.",
+    "category": "Admin"
+  },
+  {
+    "id": 9,
+    "question": "How can I submit feedback or register a grievance?",
+    "answer": "Navigate to the 'Feedback' or 'Contact' tab, fill out the form with valid details and Canvas CAPTCHA verification, and submit directly to university administration.",
+    "category": "General"
+  },
+  {
+    "id": 10,
+    "question": "Can I export student lists or event records to CSV format?",
+    "answer": "Yes! Administrators can click the 'Export CSV' button on the Admin Dashboard or Events page to download full datasets instantly.",
+    "category": "Admin"
+  },
+  {
+    "id": 11,
+    "question": "How are Web Notifications requested and delivered?",
+    "answer": "When prompted, grant permission for desktop notifications. The portal will alert you about upcoming classes, event confirmations, and fee reminders.",
+    "category": "Portal"
+  },
+  {
+    "id": 12,
+    "question": "What are the rules for poster uploads in event management?",
+    "answer": "Event posters must be in JPG, PNG, or WEBP format and under 2MB in file size. Uploads undergo strict server-side validation.",
+    "category": "Events"
+  },
+  {
+    "id": 13,
+    "question": "Where can I view my daily class timetable?",
+    "answer": "Access the 'Schedule' section to see day-wise class timings, faculty names, room numbers, and lab assignments.",
+    "category": "Academic"
+  },
+  {
+    "id": 14,
+    "question": "How is password security enforced during registration?",
+    "answer": "Passwords must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+    "category": "Account"
+  },
+  {
+    "id": 15,
+    "question": "Is the StudentHub Portal mobile responsive?",
+    "answer": "Yes! The portal features mobile-first CSS Grid and Flexbox responsive layouts optimized across mobile phones, tablets, and desktop displays.",
+    "category": "Portal"
+  }
+]

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CHARUSAT StudentHub FAQ - Frequently Asked Questions about academic regulations, fees, attendance, and technical support.">
+    <title>CHARUSAT | Frequently Asked Questions (FAQ)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="main-content page-transition">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+            </ol>
+        </nav>
+
+        <!-- Header -->
+        <div class="page-header">
+            <div>
+                <h1>Frequently Asked Questions & Help Desk</h1>
+                <p>Find instant answers regarding student e-governance, exam regulations, portal usage, and academic
+                    services.</p>
+            </div>
+        </div>
+
+        <!-- Search & Category Filters (Practical 6) -->
+        <section class="card" style="margin-bottom: 24px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                <div>
+                    <label for="faqSearchInput" style="display: block; font-weight: 600; margin-bottom: 6px;">Search
+                        Questions:</label>
+                    <input type="text" id="faqSearchInput" class="form-input"
+                        placeholder="Search by keyword e.g. attendance..." aria-label="Search FAQs">
+                </div>
+                <div>
+                    <label for="faqCategoryFilter"
+                        style="display: block; font-weight: 600; margin-bottom: 6px;">Category Filter:</label>
+                    <select id="faqCategoryFilter" class="form-input" aria-label="Filter FAQs by category">
+                        <option value="All">All Categories</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Financial">Financial</option>
+                        <option value="Examination">Examination</option>
+                        <option value="Events">Events</option>
+                        <option value="Account">Account</option>
+                        <option value="Portal">Portal</option>
+                        <option value="Admin">Admin</option>
+                        <option value="General">General</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collapsible FAQ Accordion Container (Practical 4) -->
+        <section class="card">
+            <div id="faqAccordionContainer">
+                <div style="text-align: center; padding: 40px;">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 12px; color: var(--text-secondary);">Loading FAQ database...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

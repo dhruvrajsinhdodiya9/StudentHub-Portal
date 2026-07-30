@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CHARUSAT StudentHub Events Portal - Discover, search, filter, and register for university technical, cultural, and workshop events.">
+    <title>CHARUSAT | Campus Events & Hackathons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Skip to Content Link for Keyboard Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="main-content page-transition">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Campus Events</li>
+            </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>CHARUSAT Campus Events & Hackathons</h1>
+                <p>Explore upcoming workshops, technical fests, coding competitions, and cultural celebrations.</p>
+            </div>
+            <div>
+                <button id="notifyPermissionBtn" class="btn btn-secondary" style="font-size: 0.9rem;">
+                    🔔 Enable Web Notifications
+                </button>
+            </div>
+        </div>
+
+        <!-- Notification Banner (Practical 4) -->
+        <div class="notification-banner" id="eventsNotifBanner" role="alert">
+            <span class="notif-text">💡 <strong>Registration Alert:</strong> TechVista 2026 Hackathon registrations close this Friday! Reserve your seat early.</span>
+            <button class="notif-close-btn" onclick="this.parentElement.style.display='none'" aria-label="Close alert">&times;</button>
+        </div>
+
+        <!-- Filter & Search Control Panel (Practical 6) -->
+        <section class="card" style="margin-bottom: 24px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; align-items: center;">
+                <div>
+                    <label for="eventSearchInput" style="display: block; font-weight: 600; margin-bottom: 6px;">Search Events:</label>
+                    <input type="text" id="eventSearchInput" class="form-input" placeholder="Type event name or keyword..." aria-label="Search events">
+                </div>
+                <div>
+                    <label for="eventCategoryFilter" style="display: block; font-weight: 600; margin-bottom: 6px;">Category:</label>
+                    <select id="eventCategoryFilter" class="form-input" aria-label="Filter by category">
+                        <option value="All">All Categories</option>
+                        <option value="Technical">Technical</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Competition">Competition</option>
+                        <option value="Cultural">Cultural</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Seminar">Seminar</option>
+                        <option value="Social">Social</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="eventSortSelect" style="display: block; font-weight: 600; margin-bottom: 6px;">Sort By:</label>
+                    <select id="eventSortSelect" class="form-input" aria-label="Sort events">
+                        <option value="date-asc">Date (Earliest First)</option>
+                        <option value="date-desc">Date (Latest First)</option>
+                        <option value="title-asc">Title (A - Z)</option>
+                        <option value="seats-desc">Available Seats</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 8px; align-self: end;">
+                    <button id="resetEventsFilterBtn" class="btn btn-secondary" style="width: 100%;">Reset Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Events Grid -->
+        <section>
+            <div id="eventsContainer" class="grid-3">
+                <!-- Rendered dynamically by Fetch API / JS -->
+                <div class="card" style="text-align: center; padding: 40px;">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 12px; color: var(--text-secondary);">Loading campus events data...</p>
+                </div>
+            </div>
+
+            <!-- Pagination Bar (Practical 6) -->
+            <div id="eventsPagination" class="pagination-bar" style="margin-top: 32px; display: flex; justify: center; align-items: center; gap: 8px;">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Event Detail & Registration Modal (Practical 4) -->
+    <div id="eventDetailModal" class="modal-overlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modalEventTitle">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="closeEventModalBtn" aria-label="Close modal">&times;</button>
+            <h2 id="modalEventTitle" style="color: var(--accent-color); margin-bottom: 12px;">Event Title</h2>
+            <div id="modalEventContent">
+                <!-- Dynamic Content -->
+            </div>
+            <div style="margin-top: 24px; text-align: right; display: flex; gap: 12px; justify-content: flex-end;">
+                <button class="btn btn-secondary" onclick="document.getElementById('eventDetailModal').style.display='none'">Close</button>
+                <button id="modalRegisterBtn" class="btn">Confirm Registration</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
