@@ -1,147 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHARUSAT | Academic Attendance Monitor</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Attendance - StudentHub Portal</title>
 </head>
 
 <body>
+<header>
+    <!-- Website header -->
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td><h1>StudentHub Portal</h1><p>Attendance Information</p></td>
+            <td align="right"><a href="dashboard.html">Dashboard</a> | <a href="index.html">Logout</a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav>
+        <a href="dashboard.html">Dashboard</a> | <a href="profile.html">Profile</a> |
+        <a href="attendance.html">Attendance</a> | <a href="course.html">Courses</a> |
+        <a href="grades.html">Grades</a>
+    </nav>
+    <hr>
+</header>
 
-    <main class="main-content">
-        <!-- Page Header -->
-        <div class="page-header">
-            <div>
-                <h1>Subject Wise Attendance</h1>
-                <p>Track academic attendance records for B.Tech CSE Semester 3 (Division I)</p>
-            </div>
-            <div
-                style="font-size: 1.25rem; font-weight: 700; color: var(--accent-color); background: var(--accent-glow); padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border-color);">
-                Overall Average: 92.5%
-            </div>
-        </div>
+<main>
+    <!-- Attendance table -->
+    <section>
+        <h2>Subject-wise Attendance</h2>
+        <table border="1" cellpadding="8" cellspacing="0" width="100%">
+            <tr>
+                <th>Subject</th><th>Total</th><th>Attended</th><th>Percentage</th>
+            </tr>
+            <tr><td>Object Oriented Programming</td><td>32</td><td>28</td><td>87.5%</td></tr>
+            <tr><td>Data Structures</td><td>30</td><td>25</td><td>83.3%</td></tr>
+            <tr><td>Mathematics</td><td>30</td><td>24</td><td>80%</td></tr>
+            <tr><td>Web Development</td><td>28</td><td>25</td><td>89.3%</td></tr>
+        </table>
+    </section>
 
-        <!-- Attendance Stats Cards -->
-        <section class="grid-3">
-            <div class="card">
-                <h2>Average Attendance</h2>
-                <div class="stat-value">92.5%</div>
-                <p style="color: var(--success);">Above target criteria (75%)</p>
-            </div>
-            <div class="card">
-                <h2>Total Attended</h2>
-                <div class="stat-value">136</div>
-                <p>Lectures & Practical labs attended</p>
-            </div>
-            <div class="card">
-                <h2>Conducted Sessions</h2>
-                <div class="stat-value">147</div>
-                <p>Total department sessions conducted</p>
-            </div>
-        </section>
+    <hr>
 
-        <!-- Subject Table -->
-        <section class="card" style="margin-top: 8px;">
-            <h2>Course Wise Attendance Breakdown</h2>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Subject Name</th>
-                            <th>Faculty In-Charge</th>
-                            <th>Attended / Conducted</th>
-                            <th>Percentage</th>
-                            <th>Attendance Track</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="font-weight: 700; color: var(--accent-color);">CSUC201</td>
-                            <td style="font-weight: 600; color: var(--text-primary);">Fundamentals of Data Structure &
-                                Algorithm (FDSA)</td>
-                            <td>Dr. Amit Thakkar (ART) / Prof. VMP</td>
-                            <td>32 / 34</td>
-                            <td style="font-weight: 600; color: var(--success);">94.1%</td>
-                            <td>
-                                <div class="progress-container">
-                                    <div class="progress-bar" style="width: 94%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: var(--accent-color);">ITUE204</td>
-                            <td style="font-weight: 600; color: var(--text-primary);">Web Development Frameworks (WDF)
-                            </td>
-                            <td>Prof. Srushti Gajjar (SRG) / Prof. VYP</td>
-                            <td>38 / 40</td>
-                            <td style="font-weight: 600; color: var(--success);">95.0%</td>
-                            <td>
-                                <div class="progress-container">
-                                    <div class="progress-bar" style="width: 95%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: var(--accent-color);">CEUE203</td>
-                            <td style="font-weight: 600; color: var(--text-primary);">Object Oriented Programming (OOP)
-                            </td>
-                            <td>Prof. Siddharth Shah (SSS) / Prof. ADK</td>
-                            <td>24 / 27</td>
-                            <td style="font-weight: 600; color: var(--success);">88.8%</td>
-                            <td>
-                                <div class="progress-container">
-                                    <div class="progress-bar" style="width: 89%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: var(--accent-color);">ITUC201</td>
-                            <td style="font-weight: 600; color: var(--text-primary);">Fundamentals of Computer Networks
-                                (FCN)</td>
-                            <td>Prof. Harshul Yagnik (HYY) / Prof. BPP</td>
-                            <td>28 / 30</td>
-                            <td style="font-weight: 600; color: var(--success);">93.3%</td>
-                            <td>
-                                <div class="progress-container">
-                                    <div class="progress-bar" style="width: 93%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: var(--accent-color);">MSUD203</td>
-                            <td style="font-weight: 600; color: var(--text-primary);">Discrete Mathematics (MATHS)</td>
-                            <td>Prof. Pragnesh Makwana (PM)</td>
-                            <td>14 / 16</td>
-                            <td style="font-weight: 600; color: var(--success);">87.5%</td>
-                            <td>
-                                <div class="progress-container">
-                                    <div class="progress-bar" style="width: 88%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: 700; color: var(--accent-color);">HSUV201</td>
-                            <td style="font-weight: 600; color: var(--text-primary);">Creativity, Problem Solving &
-                                Innovation (HS)</td>
-                            <td>Prof. Akshita Kadam (ADK)</td>
-                            <td>0 / 0</td>
-                            <td style="font-weight: 600; color: var(--success);">100.0%</td>
-                            <td>
-                                <div class="progress-container">
-                                    <div class="progress-bar" style="width: 100%;"></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+    <!-- Overall attendance status -->
+    <section>
+        <h2>Overall Attendance</h2>
+        <p><strong>Current Attendance: 85%</strong></p>
+        <p>Minimum required attendance: 75%</p>
+        <p><strong>Status: Eligible for Examination</strong></p>
+    </section>
+</main>
 
-    <script src="script.js"></script>
+<hr>
+
+<footer>
+    <p>StudentHub Portal - CHARUSAT</p>
+    <p><a href="dashboard.html">Back to Dashboard</a></p>
+</footer>
 </body>
-
 </html>

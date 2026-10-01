@@ -1,75 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="CHARUSAT StudentHub FAQ - Frequently Asked Questions about academic regulations, fees, attendance, and technical support.">
-    <title>CHARUSAT | Frequently Asked Questions (FAQ)</title>
-    <link rel="stylesheet" href="style.css">
+    <title>FAQ - StudentHub Portal</title>
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<header>
+    <!-- Website header -->
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td><h1>StudentHub Portal</h1><p>Frequently Asked Questions</p></td>
+            <td align="right"><a href="index.html">Home</a> | <a href="login.html">Login</a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav>
+        <a href="index.html">Home</a> | <a href="login.html">Login</a> |
+        <a href="signup.html">Register</a> | <a href="faq.html">FAQ</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <hr>
+</header>
 
-    <main id="main-content" class="main-content page-transition">
-        <!-- Breadcrumb Navigation -->
-        <nav aria-label="Breadcrumb" class="breadcrumb-container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">FAQ</li>
-            </ol>
-        </nav>
+<main>
+    <!-- Common questions -->
+    <section>
+        <h2>Frequently Asked Questions</h2>
 
-        <!-- Header -->
-        <div class="page-header">
-            <div>
-                <h1>Frequently Asked Questions & Help Desk</h1>
-                <p>Find instant answers regarding student e-governance, exam regulations, portal usage, and academic
-                    services.</p>
-            </div>
-        </div>
+        <h3>How do I login?</h3>
+        <p>Open the login page and enter your account information.</p>
 
-        <!-- Search & Category Filters (Practical 6) -->
-        <section class="card" style="margin-bottom: 24px;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
-                <div>
-                    <label for="faqSearchInput" style="display: block; font-weight: 600; margin-bottom: 6px;">Search
-                        Questions:</label>
-                    <input type="text" id="faqSearchInput" class="form-input"
-                        placeholder="Search by keyword e.g. attendance..." aria-label="Search FAQs">
-                </div>
-                <div>
-                    <label for="faqCategoryFilter"
-                        style="display: block; font-weight: 600; margin-bottom: 6px;">Category Filter:</label>
-                    <select id="faqCategoryFilter" class="form-input" aria-label="Filter FAQs by category">
-                        <option value="All">All Categories</option>
-                        <option value="Academic">Academic</option>
-                        <option value="Financial">Financial</option>
-                        <option value="Examination">Examination</option>
-                        <option value="Events">Events</option>
-                        <option value="Account">Account</option>
-                        <option value="Portal">Portal</option>
-                        <option value="Admin">Admin</option>
-                        <option value="General">General</option>
-                    </select>
-                </div>
-            </div>
-        </section>
+        <h3>How can I check attendance?</h3>
+        <p>Login to StudentHub and open the Attendance page.</p>
 
-        <!-- Collapsible FAQ Accordion Container (Practical 4) -->
-        <section class="card">
-            <div id="faqAccordionContainer">
-                <div style="text-align: center; padding: 40px;">
-                    <div class="spinner"></div>
-                    <p style="margin-top: 12px; color: var(--text-secondary);">Loading FAQ database...</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <h3>Where can I view my grades?</h3>
+        <p>Open the Grades page from the dashboard navigation.</p>
 
-    <script src="script.js"></script>
+        <h3>How can I check fee information?</h3>
+        <p>Open the Fees page after logging into your account.</p>
+
+        <h3>How can I contact support?</h3>
+        <p>Use the Contact page to send your message.</p>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Still Need Help?</h2>
+        <p><a href="contact.html">Contact StudentHub Support</a></p>
+    </section>
+</main>
+
+<hr>
+
+<footer>
+    <p>StudentHub Portal - CHARUSAT</p>
+    <p>&copy; 2026 StudentHub Portal</p>
+</footer>
 </body>
-
 </html>

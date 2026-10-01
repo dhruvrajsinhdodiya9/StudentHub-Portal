@@ -1,63 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Sign Up</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="auth-container">
-        <div class="auth-bg-blob-1"></div>
-        <div class="auth-bg-blob-2"></div>
+<!-- Student registration page -->
+<header>
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td>
+                <h1>StudentHub Portal</h1>
+                <p>Student Registration</p>
+            </td>
+            <td align="right">
+                <a href="index.html">Home</a> |
+                <a href="login.html">Login</a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="login.html">Login</a> |
+        <a href="signup.html">Register</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <hr>
+</header>
 
-        <div class="auth-card">
-            <img src="charusat-logo.jpg" alt="CHARUSAT Logo" class="auth-logo-img">
-            <h1 class="auth-logo">Create Account</h1>
-            <p class="auth-subtitle">Join StudentHub to manage your studies</p>
+<main>
+<section>
+    <h2>Create Your Account</h2>
+    <p>Create your account to access the Student Portal.</p>
 
-            <form id="signupForm">
-                <div class="form-group">
-                    <label for="signupName">Full Name</label>
-                    <input type="text" id="signupName" placeholder="Dhruvrajsinh Dodiya" required>
-                </div>
+    <!-- Registration form -->
+    <form action="php/register.php" method="post">
+        <fieldset>
+            <legend>Student Information</legend>
 
-                <div class="form-group">
-                    <label for="signupUsername">Username</label>
-                    <input type="text" id="signupUsername" placeholder="dhruvrajsinh" required>
-                </div>
+            <p><label>First Name</label><br>
+            <input type="text" name="first_name" placeholder="Enter first name" required></p>
 
-                <div class="form-group">
-                    <label for="signupEmail">Gmail Address</label>
-                    <input type="email" id="signupEmail" placeholder="dhruvrajsinh@gmail.com" required>
-                </div>
+            <p><label>Last Name</label><br>
+            <input type="text" name="last_name" placeholder="Enter last name" required></p>
 
-                <div class="form-group">
-                    <label for="signupPassword">Password</label>
-                    <input type="password" id="signupPassword" placeholder="••••••••" required>
-                    <div class="password-strength-container">
-                        <div class="strength-bar-bg">
-                            <div id="strengthBar" class="strength-bar-fill"></div>
-                        </div>
-                        <div id="strengthText" class="strength-text">Password requirements: Min 8 chars, uppercase, lowercase & numbers</div>
-                    </div>
-                </div>
+            <p><label>Student ID</label><br>
+            <input type="text" name="student_id" placeholder="Enter Student ID" required></p>
 
-                <button type="submit" id="btnSignupSubmit" class="btn" style="width: 100%; margin-top: 14px;">
-                    Create Account
-                </button>
-            </form>
+            <p><label>Email Address</label><br>
+            <input type="email" name="email" placeholder="Enter email address" required></p>
 
-            <p class="auth-footer-text">
-                Already have an account? <a href="login.html">Sign In</a>
+            <p><label>Mobile Number</label><br>
+            <input type="tel" name="mobile" placeholder="+91 Enter mobile number" required></p>
+
+            <p><label>Date of Birth</label><br>
+            <input type="date" name="dob" required></p>
+
+            <p><label>Gender</label><br>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other</p>
+
+            <p><label>Course</label><br>
+            <select name="course" required>
+                <option value="">Select Course</option>
+                <option>B.Tech Computer Science & Engineering</option>
+                <option>BCA</option>
+                <option>B.Sc. Information Technology</option>
+                <option>B.Pharm</option>
+                <option>MBA</option>
+            </select></p>
+
+            <p><label>Semester</label><br>
+            <select name="semester" required>
+                <option value="">Select Semester</option>
+                <option>Semester 1</option><option>Semester 2</option>
+                <option>Semester 3</option><option>Semester 4</option>
+                <option>Semester 5</option><option>Semester 6</option>
+            </select></p>
+
+            <p><label>Password</label><br>
+            <input type="password" name="password" placeholder="Create a password" required></p>
+
+            <p><label>Confirm Password</label><br>
+            <input type="password" name="confirm_password"
+            placeholder="Confirm your password" required></p>
+
+            <p>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="#">Terms and Conditions</a> and
+                <a href="#">Privacy Policy</a>.
             </p>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
+            <button type="submit">Create Account</button>
+            <button type="reset">Clear</button>
+        </fieldset>
+    </form>
+</section>
+
+<hr>
+
+<section>
+    <p>Already have an account? <a href="login.html">Login Here</a></p>
+</section>
+</main>
+
+<hr>
+
+<footer>
+    <p><strong>StudentHub Portal</strong></p>
+    <p>CHARUSAT - Faculty of Technology & Engineering</p>
+    <p>&copy; 2026 StudentHub Portal</p>
+</footer>
+
 </body>
-
 </html>

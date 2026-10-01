@@ -1,88 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub | Announcements</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Announcements - StudentHub Portal</title>
 </head>
 
 <body>
 
-    <main class="main-content">
-        <!-- Page Header -->
-        <div class="page-header">
-            <div>
-                <h1>Announcements</h1>
-                <p>Stay up to date with official university updates and academic deadlines</p>
-            </div>
-        </div>
+<header>
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td><h1>StudentHub Portal</h1><p>University Announcements</p></td>
+            <td align="right"><a href="index.html">Home</a> | <a href="dashboard.html">Dashboard</a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav>
+        <a href="index.html">Home</a> | <a href="dashboard.html">Dashboard</a> |
+        <a href="announcements.html">Announcements</a> | <a href="events.html">Events</a>
+    </nav>
+    <hr>
+</header>
 
-        <div class="grid-3" style="grid-template-columns: 2fr 1fr;">
-            <!-- Notices list -->
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="card">
-                    <h2 style="font-size: 1.15rem; color: var(--accent-color);">Mid-Semester Examination Calendar</h2>
-                    <p style="margin-top: 8px;">Mid-Semester examinations will officially commence from <b>21 July
-                            2026</b>. Ensure all department clear-cards are signed and students carry their official
-                        university ID tags to examinations.</p>
-                </div>
-                <div class="card">
-                    <h2 style="font-size: 1.15rem; color: var(--accent-color);">Campus Hackathon Registrations Open</h2>
-                    <p style="margin-top: 8px;">Registrations are now open for the Annual University Hackathon. Submit
-                        your team member compositions and project draft summaries before <b>18 July 2026</b>.</p>
-                </div>
-                <div class="card">
-                    <h2 style="font-size: 1.15rem; color: var(--accent-color);">Merit Scholarships Allocation</h2>
-                    <p style="margin-top: 8px;">Students eligible for class Merit-cum-Means Scholarships should submit
-                        their parents' salary details and previous CGPA card scans to the admin block before <b>25 July
-                            2026</b>.</p>
-                </div>
-                <div class="card">
-                    <h2 style="font-size: 1.15rem; color: var(--accent-color);">Corporate Placement Drives</h2>
-                    <p style="margin-top: 8px;">ABC Technologies placement cell recruitment coordinators will visit the
-                        computer laboratories next month for full-stack engineer shortlisting. Mock preparation
-                        schedules are active.</p>
-                </div>
-            </div>
+<main>
 
-            <!-- Upcoming Events Table -->
-            <div class="card" style="height: fit-content;">
-                <h2>Upcoming Events</h2>
-                <div class="table-responsive" style="margin-top: 12px;">
-                    <table style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th>Activity</th>
-                                <th>Date</th>
-                                <th>Venue</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">AI Workshop</td>
-                                <td>20 July</td>
-                                <td>Seminar Hall</td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">Hackathon</td>
-                                <td>27 July</td>
-                                <td>CS Lab 2</td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: 600; color: var(--text-primary);">Sports Day</td>
-                                <td>10 Aug</td>
-                                <td>Ground A</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </main>
+<section>
+    <h2>Announcements</h2>
+    <p>Stay up to date with official university updates and academic deadlines.</p>
+</section>
 
-    <script src="script.js"></script>
+<hr>
+
+<!-- Official university notices -->
+<section>
+    <h2>Mid-Semester Examination Calendar</h2>
+    <p>Mid-Semester examinations will officially commence from <strong>21 July 2026</strong>.
+    Ensure all department clear-cards are signed and carry your official university ID tag.</p>
+
+    <h2>Campus Hackathon Registrations Open</h2>
+    <p>Registrations are now open for the Annual University Hackathon. Submit your team
+    members and project draft summary before <strong>18 July 2026</strong>.</p>
+
+    <h2>Merit Scholarships Allocation</h2>
+    <p>Eligible students should submit parents' salary details and previous CGPA card scans
+    to the admin block before <strong>25 July 2026</strong>.</p>
+
+    <h2>Corporate Placement Drives</h2>
+    <p>ABC Technologies recruitment coordinators will visit the computer laboratories next
+    month for full-stack engineer shortlisting. Mock preparation schedules are active.</p>
+</section>
+
+<hr>
+
+<!-- List of upcoming campus activities -->
+<section>
+    <h2>Upcoming Events</h2>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr><th>Activity</th><th>Date</th><th>Venue</th></tr>
+        <tr><td>AI Workshop</td><td>20 July</td><td>Seminar Hall</td></tr>
+        <tr><td>Hackathon</td><td>27 July</td><td>CS Lab 2</td></tr>
+        <tr><td>Sports Day</td><td>10 Aug</td><td>Ground A</td></tr>
+    </table>
+</section>
+
+</main>
+
+<hr>
+
+<footer>
+    <p><strong>StudentHub Portal</strong></p>
+    <p>CHARUSAT - Faculty of Technology & Engineering</p>
+    <p>&copy; 2026 StudentHub Portal</p>
+</footer>
+
 </body>
-
 </html>

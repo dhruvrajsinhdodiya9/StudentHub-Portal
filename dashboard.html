@@ -1,128 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHARUSAT | Student Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dashboard - StudentHub Portal</title>
 </head>
 
 <body>
+<header>
+    <!-- Website header -->
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td><h1>StudentHub Portal</h1><p>Student Dashboard</p></td>
+            <td align="right"><a href="profile.html">Profile</a> | <a href="index.html">Logout</a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav>
+        <a href="dashboard.html">Dashboard</a> | <a href="profile.html">Profile</a> |
+        <a href="attendance.html">Attendance</a> | <a href="course.html">Courses</a> |
+        <a href="schedule.html">Schedule</a> | <a href="grades.html">Grades</a> |
+        <a href="fees.html">Fees</a>
+    </nav>
+    <hr>
+</header>
 
-    <main class="main-content">
-        <!-- Page Header -->
-        <div class="page-header">
-            <div>
-                <h1>Student Dashboard</h1>
-                <p>Welcome back, Dhruvrajsinh Dodiya (Enrollment: 25CS009 | Institute: CSPIT)</p>
-            </div>
-        </div>
+<main>
+    <!-- Student summary -->
+    <section>
+        <h2>Welcome, Student</h2>
+        <p>Here is a summary of your academic information.</p>
 
-        <!-- Stat Cards KPI -->
-        <section class="grid-4">
-            <div class="card">
-                <h2>Attendance</h2>
-                <div class="stat-value">92%</div>
-                <p style="color: var(--success);">Above target (75%)</p>
-            </div>
-            <div class="card">
-                <h2>Cumulative CGPA</h2>
-                <div class="stat-value">8.75</div>
-                <p>Semester 1 Grade Record</p>
-            </div>
-            <div class="card">
-                <h2>Active Courses</h2>
-                <div class="stat-value">6</div>
-                <p>Semester 3 CSE Courses</p>
-            </div>
-            <div class="card">
-                <h2>Financials</h2>
-                <div id="pendingDuesValDashboard" class="stat-value" style="color: var(--warning);">₹75,000</div>
-                <p>Outstanding balance due</p>
-            </div>
-        </section>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr><th>Information</th><th>Details</th></tr>
+            <tr><td>Student ID</td><td>25CS009</td></tr>
+            <tr><td>Department</td><td>Computer Engineering</td></tr>
+            <tr><td>Semester</td><td>Semester 3</td></tr>
+            <tr><td>Attendance</td><td>85%</td></tr>
+            <tr><td>Current SGPA</td><td>8.50</td></tr>
+        </table>
+    </section>
 
-        <!-- Detailed Columns Grid -->
-        <section class="grid-3">
-            <!-- Recent Activity Card -->
-            <div class="card">
-                <h2>Recent Activity</h2>
-                <ul style="list-style: none; padding-top: 10px;">
-                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">
-                        Attendance database updated (Today)</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">FDSA
-                        Assignment uploaded successfully</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">Semester
-                        fees paid online via UPI</li>
-                    <li style="padding: 8px 0; font-size: 14px;">OOP Quiz results published</li>
-                </ul>
-            </div>
+    <hr>
 
-            <!-- Latest Announcements Card -->
-            <div class="card">
-                <h2>College Announcements</h2>
-                <ul style="list-style: none; padding-top: 10px;">
-                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">
-                        CIE begins next Monday.</li>
-                    <li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px;">AI & Deep
-                        Learning workshop registrations open.</li>
-                    <li style="padding: 8px 0; font-size: 14px;">Smart India Hackathon(SIH) team selection deadline: Friday.</li>
-                </ul>
-            </div>
+    <!-- Quick access links -->
+    <section>
+        <h2>Quick Access</h2>
+        <ul>
+            <li><a href="announcements.html">Important Announcements</a></li>
+            <li><a href="events.html">Upcoming Events</a></li>
+            <li><a href="studentcorner.html">Student Corner</a></li>
+            <li><a href="settings.html">Account Settings</a></li>
+            <li><a href="feedback.html">Give Feedback</a></li>
+        </ul>
+    </section>
 
-            <!-- Today's Classes Card -->
-            <div class="card">
-                <h2>Today's Scheduled Classes</h2>
-                <div class="table-responsive" style="margin-top: 10px; border: none;">
-                    <table style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Subject (Code)</th>
-                                <th>Room / Faculty</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>09:10 AM</td>
-                                <td style="font-weight: 500; color: var(--text-primary);">FDSA (CSUC201)</td>
-                                <td>Room 506 (Prof. VMP)</td>
-                            </tr>
-                            <tr>
-                                <td>10:10 AM</td>
-                                <td style="font-weight: 500; color: var(--text-primary);">FCN (ITUC201)</td>
-                                <td>Room 506 (Prof. HYY)</td>
-                            </tr>
-                            <tr>
-                                <td>01:10 PM</td>
-                                <td style="font-weight: 500; color: var(--text-primary);">HS (HSUV201)</td>
-                                <td>Room 506 (Prof. ADK)</td>
-                            </tr>
-                            <tr>
-                                <td>02:20 PM</td>
-                                <td style="font-weight: 500; color: var(--text-primary);">WDF Practical Lab</td>
-                                <td>Lab 633 (Prof. ADK)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </main>
+    <hr>
 
-    <script src="script.js"></script>
-    <script>
-        // Keep dashboard dues indicator in sync with the localStorage or fees database if paid in fees.html
-        document.addEventListener('DOMContentLoaded', () => {
-            const cleared = document.getElementById('clearedFeesRow') === null; // In real life, fees.html modifies, we just do a mock sync
-            const pendingDashboard = document.getElementById('pendingDuesValDashboard');
-            if (pendingDashboard && localStorage.getItem('feesPaid') === 'true') {
-                pendingDashboard.innerText = '₹0';
-                pendingDashboard.style.color = 'var(--success)';
-            }
-        });
-    </script>
+    <section>
+        <h2>Academic Status</h2>
+        <p><strong>Attendance:</strong> Good</p>
+        <p><strong>Fee Status:</strong> Paid</p>
+        <p><strong>Examination Status:</strong> Eligible</p>
+    </section>
+</main>
+
+<hr>
+
+<footer>
+    <p><strong>StudentHub Portal</strong></p>
+    <p>CHARUSAT - Faculty of Technology & Engineering</p>
+    <p><a href="index.html">Logout</a></p>
+</footer>
 </body>
-
 </html>

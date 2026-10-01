@@ -1,74 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHARUSAT | Student Portal</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="CHARUSAT StudentHub Portal">
+    <title>StudentHub Portal - CHARUSAT</title>
 </head>
 
 <body>
+<header>
+    <!-- Website header -->
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td>
+                <h1>StudentHub Portal</h1>
+                <p>CHARUSAT Student Academic Portal</p>
+            </td>
+            <td align="right">
+                <a href="login.html">Login</a> |
+                <a href="signup.html">Sign Up</a>
+            </td>
+        </tr>
+    </table>
 
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="card"
-            style="text-align: center; padding: 50px 24px; margin-bottom: 40px; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 80%); border-color: var(--accent-color);">
-            <img src="charusat-logo.jpg" alt="CHARUSAT Logo" class="hero-logo-img">
-            <h1
-                style="font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; background: linear-gradient(135deg, var(--accent-color), var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                Charotar University of Science & Technology
-            </h1>
-            <p
-                style="color: var(--text-secondary); max-width: 650px; margin: 0 auto 32px; font-size: 1.1rem; line-height: 1.6;">
-                Accredited with <b>NAAC A+ Grade</b> | GSIRF Ranked Top 3 in Gujarat. Welcome to the integrated Student
-                e-Governance & Services Portal. Access results, fee payments, and study resources seamlessly.
-            </p>
-            <div style="display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="login.html" class="btn" style="padding: 14px 36px; font-size: 1rem; border-radius: 30px;">
-                    Student Log In
-                </a>
-                <a href="signup.html" class="btn btn-secondary"
-                    style="padding: 14px 36px; font-size: 1rem; border-radius: 30px;">
-                    Create Account
-                </a>
-            </div>
-        </section>
+    <hr>
 
-        <!-- Core Features Grid -->
-        <h2 style="text-align: center; margin-bottom: 24px; font-size: 1.8rem;">Digital Student Services</h2>
-        <section class="grid-4">
-            <div class="card">
-                <h2>Attendance Monitor</h2>
-                <p>Check daily classroom attendance trends and track minimum required percentage criteria.</p>
-            </div>
-            <div class="card">
-                <h2>Course Syllabus</h2>
-                <p>Track academic programs, course matrices, completed modules, and syllabus credits.</p>
-            </div>
-            <div class="card">
-                <h2>Uni Exam Results</h2>
-                <p>Access CHARUSAT semester exam results, cumulative CGPA reports, and marksheets.</p>
-            </div>
-            <div class="card">
-                <h2>Fee Payments</h2>
-                <p>Clear outstanding semester and hostel dues online and download transaction receipts.</p>
-            </div>
-        </section>
+    <!-- Main navigation -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="login.html">Login</a> |
+        <a href="signup.html">Register</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <hr>
+</header>
 
-        <!-- About Section -->
-        <section class="card" style="margin-top: 40px;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 12px; color: var(--accent-color);">About CHARUSAT Changa</h2>
-            <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7;">
-                Charotar University of Science and Technology (CHARUSAT) is established under the Gujarat Act No. 8 of
-                2009. The campus is spread across 120 acres at Changa, Anand. With state-of-the-art labs, strong
-                industry placement tie-ups, and UGC recognition, CHARUSAT offers advanced B.Tech, MBA, MCA, Pharmacy,
-                and Applied Sciences programs.
-            </p>
-        </section>
-    </main>
+<main>
+    <!-- Welcome section -->
+    <section>
+        <h2>Welcome to StudentHub</h2>
+        <p>StudentHub is an academic and e-governance portal for CHARUSAT students.</p>
+        <p>Access attendance, courses, schedules, grades, fees, events and student services.</p>
+        <p><a href="login.html">Login to StudentHub</a></p>
+        <p>New student? <a href="signup.html">Create an Account</a></p>
+    </section>
 
-    <script src="script.js"></script>
+    <hr>
+
+    <!-- Available student services -->
+    <section>
+        <h2>Student Services</h2>
+        <table border="1" cellpadding="8" cellspacing="0" width="100%">
+            <tr>
+                <th>Service</th>
+                <th>Description</th>
+                <th>Open</th>
+            </tr>
+            <tr><td>Dashboard</td><td>View academic information.</td><td><a href="dashboard.html">Open</a></td></tr>
+            <tr><td>Profile</td><td>View personal details.</td><td><a href="profile.html">Open</a></td></tr>
+            <tr><td>Attendance</td><td>Check subject attendance.</td><td><a href="attendance.html">Open</a></td></tr>
+            <tr><td>Courses</td><td>View course information.</td><td><a href="course.html">Open</a></td></tr>
+            <tr><td>Schedule</td><td>View class timetable.</td><td><a href="schedule.html">Open</a></td></tr>
+            <tr><td>Grades</td><td>View academic results.</td><td><a href="grades.html">Open</a></td></tr>
+            <tr><td>Fees</td><td>View fee information.</td><td><a href="fees.html">Open</a></td></tr>
+            <tr><td>Announcements</td><td>Read important notices.</td><td><a href="announcements.html">Open</a></td></tr>
+            <tr><td>Events</td><td>Explore campus events.</td><td><a href="events.html">Open</a></td></tr>
+            <tr><td>Student Corner</td><td>Access student resources.</td><td><a href="studentcorner.html">Open</a></td></tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- University information -->
+    <section>
+        <h2>About CHARUSAT</h2>
+        <p>Charotar University of Science and Technology is located at Changa, Gujarat, India.</p>
+        <p>StudentHub provides one simple place to access academic and campus services.</p>
+    </section>
+</main>
+
+<hr>
+
+<!-- Website footer -->
+<footer>
+    <p><strong>StudentHub Portal</strong></p>
+    <p>CHARUSAT - Faculty of Technology & Engineering</p>
+    <p>
+        <a href="faq.html">FAQ</a> |
+        <a href="contact.html">Contact Us</a> |
+        <a href="feedback.html">Feedback</a>
+    </p>
+    <p>&copy; 2026 StudentHub Portal</p>
+</footer>
+
 </body>
-
 </html>

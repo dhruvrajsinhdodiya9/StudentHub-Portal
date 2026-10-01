@@ -1,109 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Basic page information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub | Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Profile - StudentHub Portal</title>
 </head>
 
 <body>
+<header>
+    <!-- Website header -->
+    <table width="100%">
+        <tr>
+            <td><img src="charusat-logo.jpg" alt="CHARUSAT Logo" width="100"></td>
+            <td><h1>StudentHub Portal</h1><p>Student Profile</p></td>
+            <td align="right"><a href="dashboard.html">Dashboard</a> | <a href="index.html">Logout</a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav>
+        <a href="dashboard.html">Dashboard</a> | <a href="profile.html">Profile</a> |
+        <a href="attendance.html">Attendance</a> | <a href="grades.html">Grades</a> |
+        <a href="settings.html">Settings</a>
+    </nav>
+    <hr>
+</header>
 
-    <main class="main-content">
-        <!-- Page Header -->
-        <div class="page-header">
-            <div>
-                <h1>My Profile</h1>
-                <p>View and manage your academic profile records</p>
-            </div>
-        </div>
+<main>
+    <!-- Personal information -->
+    <section>
+        <h2>Personal Information</h2>
+        <form action="profile.html" method="get">
+            <fieldset>
+                <legend>Student Details</legend>
+                <p><label for="name">Full Name:</label><br>
+                <input type="text" id="name" value="Student Name"></p>
 
-        <section class="grid-3" style="grid-template-columns: 1fr 2fr;">
-            <!-- Avatar card -->
-            <div class="card"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px;">
-                <div style="position: relative; margin-bottom: 20px;">
-                    <div
-                        style="width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), var(--accent-teal)); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 700; box-shadow: 0 4px 15px var(--accent-glow);">
-                        <span id="profileInitials">DD</span>
-                    </div>
-                    <img src="charusat-logo.jpg" alt="CHARUSAT Seal" style="position: absolute; bottom: -4px; right: -4px; width: 38px; height: 38px; border-radius: 8px; border: none; background: transparent; object-fit: cover; clip-path: inset(4.5% round 8px); box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-                </div>
-                <h2 id="profileName" style="margin-bottom: 4px;">Dhruvrajsinh Dodiya</h2>
-                <p style="color: var(--accent-color); font-weight: 500; font-size: 14px; margin-bottom: 16px;">B.Tech Computer Science & Eng.</p>
-                <a href="settings.html" class="btn edit-profile-btn" style="width: 100%;">Edit Profile Details</a>
-            </div>
+                <p><label for="studentid">Student ID:</label><br>
+                <input type="text" id="studentid" value="25CS009" readonly></p>
 
-            <!-- Academic & Personal Info Card -->
-            <div style="display: flex; flex-direction: column; gap: 24px;">
-                <div class="card">
-                    <h2
-                        style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px;">
-                        Personal Information</h2>
-                    <div class="table-responsive" style="border: none; margin-top: 0;">
-                        <table style="width: 100%;">
-                            <tbody>
-                                <tr>
-                                    <td style="width: 35%; font-weight: 600; color: var(--text-primary);">Student ID (Username)
-                                    </td>
-                                    <td id="profileStudentId">25CS009</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Email Address</td>
-                                    <td id="profileEmail">dhruvrajsinhdodiya4208@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Phone Number</td>
-                                    <td>+91 7096231111</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Gender / Age</td>
-                                    <td>Male / 18 Years</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Date of Birth</td>
-                                    <td>04 February 2008</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <p><label for="email">Email:</label><br>
+                <input type="email" id="email" value="student@example.com"></p>
 
-                <div class="card">
-                    <h2
-                        style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px;">
-                        Academic Credentials</h2>
-                    <div class="table-responsive" style="border: none; margin-top: 0;">
-                        <table style="width: 100%;">
-                            <tbody>
-                                <tr>
-                                    <td style="width: 35%; font-weight: 600; color: var(--text-primary);">Department
-                                    </td>
-                                    <td>Computer Science & Engineering</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Current Semester / Div
-                                    </td>
-                                    <td>Semester 1 / Division A</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Active CGPA</td>
-                                    <td style="font-weight: 700; color: var(--accent-color);">8.75 / 10.0</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: 600; color: var(--text-primary);">Academic Attendance</td>
-                                    <td>92% Overall</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                <p><label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" placeholder="Enter phone number"></p>
 
-    <script src="script.js"></script>
+                <p><button type="submit">Update Profile</button></p>
+            </fieldset>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Academic details -->
+    <section>
+        <h2>Academic Information</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr><th>Field</th><th>Information</th></tr>
+            <tr><td>University</td><td>CHARUSAT</td></tr>
+            <tr><td>Program</td><td>B.Tech Computer Engineering</td></tr>
+            <tr><td>Semester</td><td>Semester 3</td></tr>
+            <tr><td>Academic Year</td><td>2026</td></tr>
+        </table>
+    </section>
+</main>
+
+<hr>
+
+<footer>
+    <p>StudentHub Portal - CHARUSAT</p>
+    <p><a href="dashboard.html">Back to Dashboard</a></p>
+</footer>
 </body>
-
 </html>
