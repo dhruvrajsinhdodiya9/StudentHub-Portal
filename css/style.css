@@ -1,0 +1,291 @@
+
+/* General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    color: #263648;
+    line-height: 1.6;
+}
+
+/* Header section */
+header {
+    background: #12355b;
+    color: white;
+    padding: 22px 5%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin-bottom: 0;
+    color: #dce8f5;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: #1d4e89;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #2f6da8;
+}
+
+/* Main content */
+main {
+    width: 92%;
+    max-width: 1200px;
+    margin: 28px auto;
+}
+
+h2 {
+    color: #12355b;
+    margin-bottom: 8px;
+}
+
+main > p {
+    margin-top: 5px;
+}
+
+/* Search, filter and sorting controls */
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: white;
+    padding: 16px;
+    border: 1px solid #dce3eb;
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+.tools input,
+.tools select {
+    flex: 1;
+    min-width: 180px;
+    padding: 11px;
+    border: 1px solid #bcc8d4;
+    border-radius: 5px;
+    font-size: 15px;
+    background: white;
+    color: #263648;
+}
+
+.tools input:focus,
+.tools select:focus {
+    outline: 2px solid #6da4dc;
+    border-color: #1d4e89;
+}
+
+/* Grid layout for records */
+.record-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+/* Individual record cards */
+.record {
+    background: white;
+    border: 1px solid #dce3eb;
+    border-radius: 9px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow-wrap: anywhere;
+}
+
+.record h3 {
+    color: #12355b;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.record p {
+    margin: 10px 0;
+}
+
+/* Category label */
+.badge {
+    display: inline-block;
+    background: #e6eff8;
+    color: #17436d;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* Student table container */
+.table-wrap {
+    overflow-x: auto;
+    background: white;
+    border-radius: 9px;
+    border: 1px solid #dce3eb;
+}
+
+/* Student table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dce3eb;
+    white-space: nowrap;
+}
+
+th {
+    background: #e8f0f8;
+    color: #12355b;
+}
+
+tbody tr:hover {
+    background: #f7faff;
+}
+
+/* Buttons */
+button {
+    padding: 9px 15px;
+    background: #1d4e89;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover:not(:disabled) {
+    background: #12355b;
+}
+
+button:disabled {
+    background: #aeb9c5;
+    cursor: not-allowed;
+}
+
+/* Pagination section */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 22px 0;
+    flex-wrap: wrap;
+}
+
+#pageInfo {
+    font-size: 14px;
+    color: #263648;
+}
+
+/* Empty result message */
+.empty {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #dce3eb;
+    border-radius: 8px;
+    grid-column: 1 / -1;
+}
+
+/* Loading and error message */
+#message {
+    background: #e8f0f8;
+    padding: 12px;
+    border-radius: 6px;
+    color: #12355b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #12355b;
+    color: white;
+    padding: 20px;
+    margin-top: 35px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* Tablet responsive layout */
+@media (max-width: 850px) {
+    .record-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    main {
+        width: 94%;
+    }
+}
+
+/* Mobile responsive layout */
+@media (max-width: 560px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .record-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tools {
+        padding: 12px;
+    }
+
+    .tools input,
+    .tools select {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    nav a {
+        flex: 1 1 40%;
+        text-align: center;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .pagination {
+        gap: 8px;
+    }
+}

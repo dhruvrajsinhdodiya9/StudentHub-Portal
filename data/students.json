@@ -1,0 +1,17 @@
+[
+  { "id": 1, "enrollment": "25CS001", "name": "Aarav Patel", "email": "aarav.cs001@charusat.edu.in", "department": "Computer Engineering", "year": "3rd Year", "gpa": "9.12", "status": "Active" },
+  { "id": 2, "enrollment": "25CS002", "name": "Ananya Sharma", "email": "ananya.cs002@charusat.edu.in", "department": "Computer Engineering", "year": "3rd Year", "gpa": "8.85", "status": "Active" },
+  { "id": 3, "enrollment": "25CS003", "name": "Bhavya Shah", "email": "bhavya.cs003@charusat.edu.in", "department": "Information Technology", "year": "3rd Year", "gpa": "7.90", "status": "Active" },
+  { "id": 4, "enrollment": "25CS004", "name": "Devansh Joshi", "email": "devansh.cs004@charusat.edu.in", "department": "Computer Engineering", "year": "3rd Year", "gpa": "8.45", "status": "Active" },
+  { "id": 5, "enrollment": "25CS005", "name": "Dhyey Trivedi", "email": "dhyey.cs005@charusat.edu.in", "department": "Information Technology", "year": "3rd Year", "gpa": "9.30", "status": "Active" },
+  { "id": 6, "enrollment": "25CS006", "name": "Diya Mehta", "email": "diya.cs006@charusat.edu.in", "department": "Computer Science & Engg", "year": "3rd Year", "gpa": "8.60", "status": "Active" },
+  { "id": 7, "enrollment": "25CS007", "name": "Hardik Parmar", "email": "hardik.cs007@charusat.edu.in", "department": "Electrical Engineering", "year": "3rd Year", "gpa": "7.50", "status": "Active" },
+  { "id": 8, "enrollment": "25CS008", "name": "Isha Solanki", "email": "isha.cs008@charusat.edu.in", "department": "Information Technology", "year": "3rd Year", "gpa": "8.95", "status": "Active" },
+  { "id": 9, "enrollment": "25CS009", "name": "Dhruvrajsinh Dodiya", "email": "dhruvrajsinhdodiya4208@gmail.com", "department": "Computer Engineering", "year": "3rd Year", "gpa": "9.45", "status": "Active" },
+  { "id": 10, "enrollment": "25CS010", "name": "Karan Vaghela", "email": "karan.cs010@charusat.edu.in", "department": "Mechanical Engineering", "year": "3rd Year", "gpa": "8.10", "status": "Active" },
+  { "id": 11, "enrollment": "25CS011", "name": "Kavya Patel", "email": "kavya.cs011@charusat.edu.in", "department": "Civil Engineering", "year": "3rd Year", "gpa": "7.80", "status": "Active" },
+  { "id": 12, "enrollment": "25CS012", "name": "Manan Desai", "email": "manan.cs012@charusat.edu.in", "department": "Computer Engineering", "year": "3rd Year", "gpa": "8.70", "status": "Active" },
+  { "id": 13, "enrollment": "25CS013", "name": "Nisha Bhatt", "email": "nisha.cs013@charusat.edu.in", "department": "Information Technology", "year": "3rd Year", "gpa": "9.05", "status": "Active" },
+  { "id": 14, "enrollment": "25CS014", "name": "Parth Zala", "email": "parth.cs014@charusat.edu.in", "department": "Electronics & Comm", "year": "3rd Year", "gpa": "8.25", "status": "Active" },
+  { "id": 15, "enrollment": "25CS015", "name": "Riya Rathod", "email": "riya.cs015@charusat.edu.in", "department": "Computer Engineering", "year": "3rd Year", "gpa": "8.90", "status": "Active" }
+]
