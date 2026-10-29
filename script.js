@@ -233,7 +233,7 @@ function injectCommonElements() {
     const isHomePage = page === 'home.html' || page === '';
 
     // A. Inject Theme Toggle on auth pages
-    if (isAuthPage && !document.querySelector('.auth-theme-box')) {
+    if (isAuthPage && !document.querySelector('.auth-theme-box')) { 
         const actionsDiv = document.createElement('div');
         actionsDiv.className = 'auth-theme-box';
         actionsDiv.style.position = 'absolute';
